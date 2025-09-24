@@ -27,6 +27,9 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+# 定义主文档
+master_doc = 'index'
+
 templates_path = ['_templates']
 exclude_patterns = []
 
@@ -53,6 +56,31 @@ html_theme_options = {
      'display_version': False,
      'vcs_pageview_mode': '',
  }
+
+# -- Options for LaTeX output -------------------------------------------------
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
+    'figure_align': 'htbp',
+    'preamble': '',
+    # 添加额外的LaTeX包
+    'extrapackages': r'''
+        \usepackage{graphicx}
+        \usepackage{booktabs}
+        \usepackage{multirow}
+        \usepackage{xcolor}
+    ''',
+    # 自定义标题页
+    'maketitle': r'''
+        \maketitle
+        \tableofcontents
+    ''',
+}
+
+latex_documents = [
+    (master_doc, 'BasicStarterKitforArduinoUNOR4WiFi.tex', 'Basic Starter Kit for Arduino UNO R4 WiFi',
+     'Bot', 'manual'),
+]
 
 # Configure the "View page source" link
 html_context = {
