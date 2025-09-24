@@ -22,7 +22,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/Audio_Speaker_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Audio_Speaker_Wiring1.png
    :align: center
    :width: 80%
 

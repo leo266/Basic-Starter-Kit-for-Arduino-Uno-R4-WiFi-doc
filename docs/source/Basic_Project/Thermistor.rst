@@ -21,7 +21,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/Thermistor_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Thermistor_Wiring1.png
    :align: center
    :width: 70%
 

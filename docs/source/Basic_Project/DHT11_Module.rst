@@ -30,7 +30,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/DHT11_Module_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/DHT11_Module_Wiring1.png
    :align: center
    :width: 40%
 

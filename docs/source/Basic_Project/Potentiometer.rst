@@ -23,7 +23,7 @@ In this experiment, the potentiometer is used as voltage divider, meaning connec
 control board.
 
 .. 
-   image:: img/Potentiometer_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Potentiometer_Wiring1.png
    :align: center
    :width: 70%
 

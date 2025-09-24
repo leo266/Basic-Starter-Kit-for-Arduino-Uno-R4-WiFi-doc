@@ -12,7 +12,7 @@ Two types of buzzers are included in the kit.
 We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
 
 .. 
-   image:: img/Active_Buzzer.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Active_Buzzer.png
    :align: center
    :width: 70%
 
@@ -30,7 +30,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/Active_Buzzer_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Active_Buzzer_Wiring1.png
    :align: center
    :width: 80%
 

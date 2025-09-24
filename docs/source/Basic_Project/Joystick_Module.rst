@@ -24,7 +24,7 @@ This module has two analog outputs (corresponding to X,Y biaxial offsets).
 In this experiment, we use the Uno board to detect the moving direction of the Joystick knob.
 
 .. 
-   image:: img/Joystick_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Joystick_Wiring1.png
    :align: center 
    :width: 70%
 

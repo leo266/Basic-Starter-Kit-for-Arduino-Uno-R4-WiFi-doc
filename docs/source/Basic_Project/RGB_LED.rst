@@ -17,7 +17,7 @@ Pulse width modulation, or PWM, is a technique for getting analog results with d
 In the graphic below, the green lines represent a regular time period. This duration or period is the inverse of the PWM frequency. In other words, with Arduino's PWM frequency at about 500Hz, the green lines would measure 2 milliseconds each.
 
 .. 
-   image:: img/RGB_LED_PWM.png (COMMENTED OUT - WEBP format)
+   .. image:: img/RGB_LED_PWM.png
    :align: center
    :width: 60%
 

@@ -18,7 +18,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/Led_Blink_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Led_Blink_Wiring1.png
    :align: center
    :width: 80%
 

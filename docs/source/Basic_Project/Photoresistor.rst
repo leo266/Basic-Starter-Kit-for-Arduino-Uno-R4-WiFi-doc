@@ -22,7 +22,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/Photoresistor_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Photoresistor_Wiring1.png
    :align: center
    :width: 70%
 

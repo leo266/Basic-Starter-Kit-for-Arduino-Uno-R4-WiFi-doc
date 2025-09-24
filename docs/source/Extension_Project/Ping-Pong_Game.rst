@@ -30,7 +30,7 @@ Wiring
 **Schematic**
 
 .. 
-   image:: img/Ping_Pong_Game_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/Ping_Pong_Game_Wiring1.png
    :width: 100%
    :align: center
 

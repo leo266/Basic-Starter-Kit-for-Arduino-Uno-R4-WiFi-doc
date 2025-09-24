@@ -23,7 +23,7 @@ Schematic Diagram
 -----------------------
 
 .. 
-   image:: img/PIR_Wiring1.png (COMMENTED OUT - WEBP format)
+   .. image:: img/PIR_Wiring1.png
    :align: center
    :width: 50%
 
