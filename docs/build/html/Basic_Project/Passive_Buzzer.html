@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passive Buzzer &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Photoresistor" href="Photoresistor.html" />
+    <link rel="prev" title="Active Buzzer" href="Active_Buzzer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Basic_Project.html">Basic Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="LED_Blink.html">LED Blink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button_LED.html">Button Control LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB_LED.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Active_Buzzer.html">Active Buzzer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Passive Buzzer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DHT11_Module.html">DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Joystick_Module.html">Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Channel_Relay_Module.html">2 Channel Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PIR_Motion_Sensor.html">PIR Motion Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_Module_Speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0.96_inch_OLED.html">0.96 inch IIC OLED</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Basic_Project.html">Basic Project</a></li>
+      <li class="breadcrumb-item active">Passive Buzzer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Basic_Project/Passive_Buzzer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="passive-buzzer">
+<span id="basic-passive-buzzer"></span><h1>Passive Buzzer<a class="headerlink" href="#passive-buzzer" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>In this project, use these two functions to make the passive buzzer vibrate and produce sound. The function <code class="docutils literal notranslate"><span class="pre">tone()</span></code> generates a square wave with a specified frequency (and 50% duty cycle) on a pin. A duration can be specified, or the wave continues until <code class="docutils literal notranslate"><span class="pre">noTone()</span></code> is called.
+Similar to the active buzzer, the passive buzzer also utilizes electromagnetic induction to operate.
+The difference is that a passive buzzer does not have its own oscillating source, so it will not emit sound if DC signals are used.However, this allows the passive buzzer to adjust its own oscillation frequency and produce different notes such as “do, re, mi, fa, sol, la, ti”.</p>
+</section>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When connecting the buzzer, make sure to check its pins. The longer pin is the anode and the shorter one is the cathode. It’s important not to mix them up, as doing so will prevent the buzzer from producing any sound.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Passive_Buzzer_Wiring.png"><img alt="../_images/Passive_Buzzer_Wiring.png" class="align-center" src="../_images/Passive_Buzzer_Wiring.png" style="width: 70%;" />
+</a>
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/Passive_Buzzer_Wiring1.png"><img alt="../_images/Passive_Buzzer_Wiring1.png" class="align-center" src="../_images/Passive_Buzzer_Wiring1.png" style="width: 80%;" />
+</a>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">05_Passive_Buzzer.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+</ul>
+</div>
+<p>At the time when you finish uploading the codes to the R4 board, you can hear a melody containing seven notes.</p>
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Including the pitches library:
+This library provides the frequency values for various musical notes, allowing you to use musical notation in your code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please place the <code class="docutils literal notranslate"><span class="pre">pitches.h</span></code> file in the same directory as the code to ensure proper functioning. <a class="reference external" href="https://raw.githubusercontent.com/lafvintech/Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi/main/Code/05_Passive_Buzzer/pitches.h">pitches.h</a></p>
+<img alt="../_images/Passive_Buzzer_Code.png" src="../_images/Passive_Buzzer_Code.png" />
+</div>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pitches.h&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Defining constants and arrays:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buzzerPin</span></code> is the digital pin on the Arduino where the buzzer is connected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">melody[]</span></code> is an array that stores the sequence of notes to be played.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">noteDurations[]</span></code> is an array that stores the duration of each note in the melody.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">buzzerPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">melody</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">NOTE_C4</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_G3</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_G3</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_A3</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_G3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_B3</span><span class="p">,</span><span class="w"> </span><span class="n">NOTE_C4</span>
+<span class="p">};</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">noteDurations</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>Playing the melody:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iterates over each note in the melody.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">tone()</span></code> function plays a note on the buzzer for a specific duration.</p></li>
+<li><p>A delay is added between notes to distinguish them.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">noTone()</span></code> function stops the sound.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kr">int</span><span class="w"> </span><span class="n">thisNote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">thisNote</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">thisNote</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="n">noteDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">noteDurations</span><span class="p">[</span><span class="n">thisNote</span><span class="p">];</span>
+<span class="w">    </span><span class="nf">tone</span><span class="p">(</span><span class="n">buzzerPin</span><span class="p">,</span><span class="w"> </span><span class="n">melody</span><span class="p">[</span><span class="n">thisNote</span><span class="p">],</span><span class="w"> </span><span class="n">noteDuration</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">int</span><span class="w"> </span><span class="n">pauseBetweenNotes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">noteDuration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.30</span><span class="p">;</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="n">pauseBetweenNotes</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">noTone</span><span class="p">(</span><span class="n">buzzerPin</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Empty loop function:
+Since the melody is played only once in the setup, there’s no code in the loop function.</p></li>
+<li><p>Feel free to experiment with altering the notes and durations in the <code class="docutils literal notranslate"><span class="pre">melody[]</span></code> and <code class="docutils literal notranslate"><span class="pre">noteDurations[]</span></code> arrays to create your own melodies. If you’re interested, there is a GitHub repository (<a class="reference external" href="https://github.com/robsoncouto/arduino-songs">arduino-songs</a>) that offers Arduino code for playing various songs. While their approach may differ from this project, you can consult their notes and durations for reference.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Active_Buzzer.html" class="btn btn-neutral float-left" title="Active Buzzer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Photoresistor.html" class="btn btn-neutral float-right" title="Photoresistor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

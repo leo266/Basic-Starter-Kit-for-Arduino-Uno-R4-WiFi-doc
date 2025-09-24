@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Control Relay (Station Mode) &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Digital Dice LED Matrix" href="Digital_Dice_LED_Matrix.html" />
+    <link rel="prev" title="Web Control LED (WiFi Access Point)" href="Web_Control_LED.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Extension_Project.html">Extension_Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="12x8_LED_Matrix.html">12x8 LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WiFi_Connect_Test.html">WiFi Connect Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_LED.html">Web Control LED (WiFi Access Point)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web Control Relay (Station Mode)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upload-the-code">1. Upload the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-explanation">2. Code explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Digital_Dice_LED_Matrix.html">Digital Dice LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greedy_Snake_Game.html">Greedy Snake Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ping-Pong_Game.html">Ping-Pong Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Real-time_Weather_OLED.html">Real-time Weather OLED</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Extension_Project.html">Extension_Project</a></li>
+      <li class="breadcrumb-item active">Web Control Relay (Station Mode)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Extension_Project/Web_Control_Relay.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="web-control-relay-station-mode">
+<span id="ext-web-control-relay"></span><h1>Web Control Relay (Station Mode)<a class="headerlink" href="#web-control-relay-station-mode" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>In this Article we are going to make a very useful and very easy home-automation project.</p>
+<p>And for making of this home-automation system, we don’t required any kind Internet and IOT Platform like blynk, ESP-Rainmeker, Arduino IOT Cloud.</p>
+<p>We need only a Router or hotspot for making a local server, here router will work as a bridge between web-page and Arduino UNO R4 WIFI board.</p>
+<a class="reference internal image-reference" href="../_images/Web_Control_Realy.png"><img alt="../_images/Web_Control_Realy.png" class="align-center" src="../_images/Web_Control_Realy.png" style="width: 80%;" />
+</a>
+</section>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the experiment, a relay is used to control the closing and opening of a 5mm LED. If you have enough experience and knowledge in using electricity, you can try to control the lighting bulb with a relay while ensuring safety.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Web_Control_Realy_Wiring.png"><img alt="../_images/Web_Control_Realy_Wiring.png" class="align-center" src="../_images/Web_Control_Realy_Wiring.png" style="width: 70%;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Web_Control_Realy_Wiring.png"><img alt="../_images/Web_Control_Realy_Wiring.png" class="align-center" src="../_images/Web_Control_Realy_Wiring.png" style="width: 80%;" />
+</a>
+</section>
+<section id="upload-the-code">
+<h2>1. Upload the code<a class="headerlink" href="#upload-the-code" title="Link to this heading"></a></h2>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">18_Web_Control_Relay</span></code> file under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code>, or copy this code into <strong>Arduino IDE</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wi-Fi® support is enabled via the built-in <code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> library that is shipped with the Arduino UNO R4 Core. Installing the core automatically installs the <code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> library.</p>
+</div>
+<p>You still need to create or modify <code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code>, replace <code class="docutils literal notranslate"><span class="pre">SECRET_SSID</span></code> and <code class="docutils literal notranslate"><span class="pre">SECRET_PASS</span></code> with the name and password of your home router WiFi access point. The file should contain:</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">//arduino_secrets.h header file</span>
+<span class="cp">#define SECRET_SSID &quot;yournetwork&quot;</span>
+<span class="cp">#define SECRET_PASS &quot;yourpassword&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>After uploading the code, check the IP address of UNO R4’s Wifi in the serial monitor of Arduino IDE.</p>
+<a class="reference internal image-reference" href="../_images/Web_Control_Realy_Code.png"><img alt="../_images/Web_Control_Realy_Code.png" class="align-center" src="../_images/Web_Control_Realy_Code.png" style="width: 100%;" />
+</a>
+</div></blockquote>
+<p>Then use your mobile phone to connect to your home router’s WiFi (the mobile phone and UNO R4 are connected to the same LAN), and access the returned IP address in the serial monitor in the mobile browser. The browser will get the control page.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Web_Control_Realy_Code1.png"><img alt="../_images/Web_Control_Realy_Code1.png" class="align-center" src="../_images/Web_Control_Realy_Code1.png" style="width: 60%;" />
+</a>
+</section>
+<section id="code-explanation">
+<h2>2. Code explanation<a class="headerlink" href="#code-explanation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Importing Required Libraries</p>
+<p>Importing the <code class="docutils literal notranslate"><span class="pre">Arduino_LED_Matrix</span></code> library for controlling LED matrix, <code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> library for WiFi functionalities, and <code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code> for sensitive data like passwords.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Arduino_LED_Matrix.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;WiFiS3.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;arduino_secrets.h&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configuration and Variable Initialization</p>
+<p>Define WiFi SSID, password, key index, LED pins, WiFi status, and create a WiFi server.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#define LED1 7</span>
+<span class="cp">#define LED2 8</span>
+
+<span class="kr">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_SSID</span><span class="p">;</span>
+<span class="kr">char</span><span class="w"> </span><span class="n">pass</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_PASS</span><span class="p">;</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">keyIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
+<span class="nf">WiFiServer</span><span class="w"> </span><span class="nf">server</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup()</span></code> Function</p>
+<p>Initialize serial communication, configure the WiFi module, start the server, and initialize LED pins.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">matrix</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+<span class="w">  </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">WL_NO_MODULE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Communication with WiFi module failed!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kr">true</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kr">String</span><span class="w"> </span><span class="n">fv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fv</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">WIFI_FIRMWARE_LATEST_VERSION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Please upgrade the firmware&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Network named: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">server</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">printWifiStatus</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Main <code class="docutils literal notranslate"><span class="pre">loop()</span></code> Function</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function performs two key operations: running the web server and updating the LED matrix.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">webServer</span><span class="p">();</span>
+<span class="w">  </span><span class="n">LEDMatrix</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEDMatrix()</span></code> Function</p>
+<p>Load a frame to the LED matrix.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">LEDMatrix</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">matrix</span><span class="p">.</span><span class="n">loadFrame</span><span class="p">(</span><span class="n">hi</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">webServer()</span></code> Function</p>
+<p>Listen for incoming clients, parse their requests, and control LEDs based on the received commands.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">webServer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">WiFiClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">.</span><span class="nf">available</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;New Client.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kr">String</span><span class="w"> </span><span class="n">currentLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">currentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">millis</span><span class="p">();</span>
+<span class="w">    </span><span class="n">previousTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentTime</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">currentTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">previousTime</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">timeoutTime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">currentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">millis</span><span class="p">();</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">available</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span>
+<span class="w">        </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="w">        </span><span class="n">header</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentLine</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;HTTP/1.1 200 OK&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Content-type:text/html&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Connection: close&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">&quot;GET /ledon1&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">output1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;on&quot;</span><span class="p">;</span>
+<span class="w">              </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">&quot;GET /ledoff1&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">output1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;off&quot;</span><span class="p">;</span>
+<span class="w">              </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">&quot;GET /ledon2&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">output2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;on&quot;</span><span class="p">;</span>
+<span class="w">              </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span><span class="w"> </span><span class="kr">LOW</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">&quot;GET /ledoff2&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">output2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;off&quot;</span><span class="p">;</span>
+<span class="w">              </span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span><span class="w"> </span><span class="kr">HIGH</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;head&gt;&lt;meta name=</span><span class="se">\&quot;</span><span class="s">viewport</span><span class="se">\&quot;</span><span class="s"> content=</span><span class="se">\&quot;</span><span class="s">width=device-width, initial-scale=1</span><span class="se">\&quot;</span><span class="s">&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;link rel=</span><span class="se">\&quot;</span><span class="s">icon</span><span class="se">\&quot;</span><span class="s"> href=</span><span class="se">\&quot;</span><span class="s">data:,</span><span class="se">\&quot;</span><span class="s">&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;style&gt;html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;.on { background-color: #FF0000; border: 5px; color: white; padding: 16px 40px; border-radius: 20px;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;.off {background-color: #000000;border: 5px; color: white; padding: 16px 40px; border-radius: 20px;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}&lt;/style&gt;&lt;/head&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;body&gt;&lt;h1&gt;Web Relay Control&lt;/h1&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Relay1 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">output1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">output1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;off&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;&lt;a href=</span><span class="se">\&quot;</span><span class="s">/ledon1</span><span class="se">\&quot;</span><span class="s">&gt;&lt;button class=</span><span class="se">\&quot;</span><span class="s">off</span><span class="se">\&quot;</span><span class="s">&gt;Turn ON&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;&lt;a href=</span><span class="se">\&quot;</span><span class="s">/ledoff1</span><span class="se">\&quot;</span><span class="s">&gt;&lt;button class=</span><span class="se">\&quot;</span><span class="s">on</span><span class="se">\&quot;</span><span class="s">&gt;Turn OFF&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;Relay2 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">output2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">output2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;off&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;&lt;a href=</span><span class="se">\&quot;</span><span class="s">/ledon2</span><span class="se">\&quot;</span><span class="s">&gt;&lt;button class=</span><span class="se">\&quot;</span><span class="s">off</span><span class="se">\&quot;</span><span class="s">&gt;Turn ON&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;p&gt;&lt;a href=</span><span class="se">\&quot;</span><span class="s">/ledoff2</span><span class="se">\&quot;</span><span class="s">&gt;&lt;button class=</span><span class="se">\&quot;</span><span class="s">on</span><span class="se">\&quot;</span><span class="s">&gt;Turn OFF&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">client</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">currentLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\r&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">currentLine</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="nf">stop</span><span class="p">();</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Client disconnected.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printWifiStatus()</span></code> Function</p>
+<p>Print the current WiFi status, including SSID, IP address, and signal strength.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">printWifiStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;SSID: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">SSID</span><span class="p">());</span>
+<span class="w">  </span><span class="nf">IPAddress</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">();</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;IP Address: &quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+<span class="w">  </span><span class="kr">long</span><span class="w"> </span><span class="n">rssi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">RSSI</span><span class="p">();</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;signal strength (RSSI):&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">rssi</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot; dBm&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Now open this URL on your browser --&gt; http://&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ip</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Web_Control_LED.html" class="btn btn-neutral float-left" title="Web Control LED (WiFi Access Point)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Digital_Dice_LED_Matrix.html" class="btn btn-neutral float-right" title="Digital Dice LED Matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Potentiometer &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DHT11 Module" href="DHT11_Module.html" />
+    <link rel="prev" title="Thermistor" href="Thermistor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Basic_Project.html">Basic Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="LED_Blink.html">LED Blink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button_LED.html">Button Control LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB_LED.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Active_Buzzer.html">Active Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Passive_Buzzer.html">Passive Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermistor.html">Thermistor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Potentiometer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DHT11_Module.html">DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Joystick_Module.html">Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Channel_Relay_Module.html">2 Channel Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PIR_Motion_Sensor.html">PIR Motion Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_Module_Speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0.96_inch_OLED.html">0.96 inch IIC OLED</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Basic_Project.html">Basic Project</a></li>
+      <li class="breadcrumb-item active">Potentiometer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Basic_Project/Potentiometer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="potentiometer">
+<span id="basic-potentiometer"></span><h1>Potentiometer<a class="headerlink" href="#potentiometer" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>In this lesson, let’s see how to change the luminance of an LED by a potentiometer, and receive the data of the potentiometer in Serial Monitor to see its value change.</p>
+</section>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/Potentiometer_Wiring.png"><img alt="../_images/Potentiometer_Wiring.png" class="align-center" src="../_images/Potentiometer_Wiring.png" style="width: 70%;" />
+</a>
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Link to this heading"></a></h2>
+<p>In this experiment, the potentiometer is used as voltage divider, meaning connecting devices to all of its three pins. Connect the middle pin of the potentiometer to pin A0 and the other two pins to 5V and GND respectively. Therefore, the voltage of the potentiometer is 0-5V. Spin the knob of the potentiometer, and the voltage at pin A0 will change. Then convert that voltage into a digital value (0-1024) with the AD converter in the control board. Through programming, we can use the converted digital value to control the brightness of the LED on the
+control board.</p>
+<a class="reference internal image-reference" href="../_images/Potentiometer_Wiring1.png"><img alt="../_images/Potentiometer_Wiring1.png" class="align-center" src="../_images/Potentiometer_Wiring1.png" style="width: 70%;" />
+</a>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">08_Potentiometer.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+<li><p>Or copy this code into Arduino IDE.</p></li>
+</ul>
+</div>
+<p>After uploading the code to the Uno board, you can open the serial monitor to observe the potentiometer’s read values. As you turn the potentiometer knob, the read value will change accordingly. The raw analog reading from the potentiometer will range from (0) to (1023). Simultaneously, the code scales this value to a range of (0) to (255), which is also displayed on the serial monitor. This scaled value is then used to control the brightness of the connected LED. The LED will become brighter or dimmer based on the scaled value. It’s worth noting that while the theoretical range of the potentiometer is (0) to (1023), the actual range may vary slightly due to hardware tolerances.</p>
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Initialization and Setup (Setting Pin Modes and Initializing Serial Communication)</p>
+<p>Before we get into the loop, we define which pins we’re using and initialize the serial communication.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">analogPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Analog input pin connected to the potentiometer</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">     </span><span class="c1">// Digital output pin connected to the LED</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initialize serial communication with a baud rate of 9600</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Reading Analog Input (Getting Data from Potentiometer)</p>
+<p>In this segment, we read the analog data from the potentiometer and print it to the serial monitor.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="n">inputValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">analogRead</span><span class="p">(</span><span class="n">analogPin</span><span class="p">);</span><span class="w">  </span><span class="c1">// Read the analog value from the potentiometer</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Input: &quot;</span><span class="p">);</span><span class="w">             </span><span class="c1">// Print &quot;Input: &quot; to the serial monitor</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">inputValue</span><span class="p">);</span><span class="w">          </span><span class="c1">// Print the raw input value to the serial monitor</span>
+</pre></div>
+</div>
+</li>
+<li><p>Mapping and Scaling (Converting Potentiometer Data)</p>
+<p>We scale the raw data from the potentiometer, which is in the range of 0-1023, to a new range of 0-255.</p>
+<p><code class="docutils literal notranslate"><span class="pre">map(value,</span> <span class="pre">fromLow,</span> <span class="pre">fromHigh,</span> <span class="pre">toLow,</span> <span class="pre">toHigh)</span></code> is used to convert a number from one range to another. For example, if the value is within the range of <code class="docutils literal notranslate"><span class="pre">fromLow</span></code> and <code class="docutils literal notranslate"><span class="pre">fromHigh</span></code>, it will be converted to a corresponding value within the range of <code class="docutils literal notranslate"><span class="pre">toLow</span></code> and <code class="docutils literal notranslate"><span class="pre">toHigh</span></code>, maintaining proportionality between the two ranges.</p>
+<p>In this case, since the LED pin (pin 9) has a range of 0-255, we need to map values in the range of 0-1023 to match that same scale of 0-255.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="n">outputValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span><span class="n">inputValue</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Map the input value to a new range</span>
+</pre></div>
+</div>
+</li>
+<li><p>Controlling LED and Serial Output</p>
+<p>Finally, we control the LED’s brightness based on the scaled value and print the scaled value for monitoring.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Output: &quot;</span><span class="p">);</span><span class="w">                        </span><span class="c1">// Print &quot;Output: &quot; to the serial monitor</span>
+<span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">outputValue</span><span class="p">);</span><span class="w">                     </span><span class="c1">// Print the scaled output value to the serial monitor</span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">outputValue</span><span class="p">);</span><span class="w">                </span><span class="c1">// Control the LED brightness based on the scaled value</span>
+<span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Thermistor.html" class="btn btn-neutral float-left" title="Thermistor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="DHT11_Module.html" class="btn btn-neutral float-right" title="DHT11 Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

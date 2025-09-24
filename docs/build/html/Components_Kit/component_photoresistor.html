@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photoresistor &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thermistor" href="component_thermistor.html" />
+    <link rel="prev" title="Potentiometer" href="component_potentiometer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Components_Kit.html">Components Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="component_UNO_R4.html">Arduino Uno R4 WiFi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_breadboard.html">Breadboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_wires.html">Jumper Wires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_resistor.html">Resistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_led.html">LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_rgb_led.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_transistor.html">Transistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_buzzer.html">Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_button.html">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_tilt_switch.html">Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_audio_speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_relay.html">2 Channel Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Components_joystick_module.html">Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_pir.html">PIR Motion Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_humiture_sensor.html">DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="component_oled.html">0.96 inch OLED Display Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Components_Kit.html">Components Introduction</a></li>
+      <li class="breadcrumb-item active">Photoresistor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Components_Kit/component_photoresistor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="photoresistor">
+<span id="cpn-photoresistor"></span><h1>Photoresistor<a class="headerlink" href="#photoresistor" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/photoresistor.png"><img alt="../_images/photoresistor.png" class="align-center" src="../_images/photoresistor.png" style="width: 200px;" />
+</a>
+<p>Photoresistor is simply a light sensitive resistor. It is an active component that decreases resistance with respect to receiving luminosity (light) on the component’s light sensitive surface. Photoresistor’s resistance value will change in proportion to the ambient light detected. With this characteristic, we can use a Photoresistor to detect light intensity. The Photoresistor and its electronic symbol are as follows.</p>
+<a class="reference internal image-reference" href="../_images/photoresistor_symbol.png"><img alt="../_images/photoresistor_symbol.png" class="align-center" src="../_images/photoresistor_symbol.png" style="width: 200px;" />
+</a>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Photoresistor">Photoresistor Wiki</a></p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Basic_Project/Photoresistor.html#basic-photoresistor"><span class="std std-ref">Photoresistor</span></a> (Basic Project)</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="component_potentiometer.html" class="btn btn-neutral float-left" title="Potentiometer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="component_thermistor.html" class="btn btn-neutral float-right" title="Thermistor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

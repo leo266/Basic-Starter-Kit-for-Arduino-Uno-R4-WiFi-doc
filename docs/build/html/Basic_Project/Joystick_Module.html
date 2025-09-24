@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joystick Module &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2 Channel Relay Module" href="2_Channel_Relay_Module.html" />
+    <link rel="prev" title="DHT11 Module" href="DHT11_Module.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Basic_Project.html">Basic Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="LED_Blink.html">LED Blink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button_LED.html">Button Control LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB_LED.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Active_Buzzer.html">Active Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Passive_Buzzer.html">Passive Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thermistor.html">Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DHT11_Module.html">DHT11 Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Joystick Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2_Channel_Relay_Module.html">2 Channel Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PIR_Motion_Sensor.html">PIR Motion Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_Module_Speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0.96_inch_OLED.html">0.96 inch IIC OLED</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Basic_Project.html">Basic Project</a></li>
+      <li class="breadcrumb-item active">Joystick Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Basic_Project/Joystick_Module.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="joystick-module">
+<span id="basic-joystick-module"></span><h1>Joystick Module<a class="headerlink" href="#joystick-module" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>A joystick is an input device consisting of a stick that pivots on a base and reports its angle or direction to the device it is controlling. Joysticks are often used to control video games and robots. A Joystick PS2 is used here.</p>
+</section>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/Joystick_Wiring.png"><img alt="../_images/Joystick_Wiring.png" class="align-center" src="../_images/Joystick_Wiring.png" style="width: 70%;" />
+</a>
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Link to this heading"></a></h2>
+<p>This module has two analog outputs (corresponding to X,Y biaxial offsets).</p>
+<p>In this experiment, we use the Uno board to detect the moving direction of the Joystick knob.</p>
+<a class="reference internal image-reference" href="../_images/Joystick_Wiring1.png"><img alt="../_images/Joystick_Wiring1.png" class="align-center" src="../_images/Joystick_Wiring1.png" style="width: 70%;" />
+</a>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">10_Joystick_Module.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+</ul>
+</div>
+<p>Now, when you push the rocker, the coordinates of the X and Y axes displayed on the Serial Monitor will change accordingly.</p>
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Link to this heading"></a></h2>
+<p>The code is use the serial monitor to print the value of the VRX and VRY pins of the joystick ps2.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;X: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">xPin</span><span class="p">),</span><span class="w"> </span><span class="n">DEC</span><span class="p">);</span><span class="w">  </span><span class="c1">// print the value of VRX in DEC</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;|Y: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">yPin</span><span class="p">),</span><span class="w"> </span><span class="n">DEC</span><span class="p">);</span><span class="w">  </span><span class="c1">// print the value of VRX in DEC</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="DHT11_Module.html" class="btn btn-neutral float-left" title="DHT11 Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="2_Channel_Relay_Module.html" class="btn btn-neutral float-right" title="2 Channel Relay Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

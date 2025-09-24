@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermistor &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Potentiometer" href="Potentiometer.html" />
+    <link rel="prev" title="Photoresistor" href="Photoresistor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Basic_Project.html">Basic Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="LED_Blink.html">LED Blink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Button_LED.html">Button Control LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RGB_LED.html">RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Active_Buzzer.html">Active Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Passive_Buzzer.html">Passive Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Photoresistor.html">Photoresistor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Thermistor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Potentiometer.html">Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DHT11_Module.html">DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Joystick_Module.html">Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Channel_Relay_Module.html">2 Channel Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PIR_Motion_Sensor.html">PIR Motion Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Audio_Module_Speaker.html">Audio Module and Speaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0.96_inch_OLED.html">0.96 inch IIC OLED</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Basic_Project.html">Basic Project</a></li>
+      <li class="breadcrumb-item active">Thermistor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Basic_Project/Thermistor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="thermistor">
+<span id="basic-thermistor"></span><h1>Thermistor<a class="headerlink" href="#thermistor" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>In this lesson, you will learn how to use thermistor. Thermistor can be used as electronic circuit components for temperature compensation of instrument circuits. In the current meter, flowmeter, gas analyzer, and other devices. It can also be used for overheating protection, contactless relay, constant temperature, automatic gain control, motor start, time delay, color TV automatic degaussing, fire alarm and temperature compensation.</p>
+</section>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<p>In this example, we use the analog pin A0 to get the value of Thermistor. One pin of thermistor is connected to 5V, and the other is wired up to A0. At the same time, a 10kΩ resistor is connected with the other pin before connecting to GND.</p>
+<a class="reference internal image-reference" href="../_images/Thermistor_Wiring.png"><img alt="../_images/Thermistor_Wiring.png" class="align-center" src="../_images/Thermistor_Wiring.png" style="width: 70%;" />
+</a>
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/Thermistor_Wiring1.png"><img alt="../_images/Thermistor_Wiring1.png" class="align-center" src="../_images/Thermistor_Wiring1.png" style="width: 70%;" />
+</a>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">07_Thermistor.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+</ul>
+</div>
+<p>After uploading the code to the uno r4 board, you can open the serial monitor to check the current temperature.</p>
+<p>The Kelvin temperature is calculated using the formula <strong>TK=1/(ln(RT/RN)/B+1/TN)</strong>. This equation is derived from the <a class="reference external" href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation">steinhart_hart</a>  and simplifies calculations. You can also find more information about this formula on the detailed introduction page of the <a class="reference internal" href="../Components_Kit/component_thermistor.html#component-thermistor"><span class="std std-ref">Thermistor</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Photoresistor.html" class="btn btn-neutral float-left" title="Photoresistor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Potentiometer.html" class="btn btn-neutral float-right" title="Potentiometer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

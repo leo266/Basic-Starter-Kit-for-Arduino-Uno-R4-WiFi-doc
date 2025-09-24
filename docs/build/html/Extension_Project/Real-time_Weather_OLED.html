@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-time Weather OLED &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Ping-Pong Game" href="Ping-Pong_Game.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Extension_Project.html">Extension_Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="12x8_LED_Matrix.html">12x8 LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WiFi_Connect_Test.html">WiFi Connect Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_LED.html">Web Control LED (WiFi Access Point)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_Relay.html">Web Control Relay (Station Mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Digital_Dice_LED_Matrix.html">Digital Dice LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greedy_Snake_Game.html">Greedy Snake Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ping-Pong_Game.html">Ping-Pong Game</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Real-time Weather OLED</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openweather">OpenWeather</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-the-library">Install the Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-code">Run the Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Extension_Project.html">Extension_Project</a></li>
+      <li class="breadcrumb-item active">Real-time Weather OLED</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Extension_Project/Real-time_Weather_OLED.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="real-time-weather-oled">
+<span id="ext-real-time-weather-oled"></span><h1>Real-time Weather OLED<a class="headerlink" href="#real-time-weather-oled" title="Link to this heading"></a></h1>
+<p>This sketch connects to a WiFi network, fetches weather data from OpenWeatherMap every minute, retrieves the current time from an NTP server, and displays the day, time, and weather information on an OLED screen.</p>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/Real_time_Weather_OLED_Wiring.png"><img alt="../_images/Real_time_Weather_OLED_Wiring.png" class="align-center" src="../_images/Real_time_Weather_OLED_Wiring.png" style="width: 100%;" />
+</a>
+<p><strong>Schematic</strong></p>
+<a class="reference internal image-reference" href="../_images/Real_time_Weather_OLED_Wiring1.png"><img alt="../_images/Real_time_Weather_OLED_Wiring1.png" class="align-center" src="../_images/Real_time_Weather_OLED_Wiring1.png" style="width: 60%;" />
+</a>
+</section>
+<section id="openweather">
+<h2>OpenWeather<a class="headerlink" href="#openweather" title="Link to this heading"></a></h2>
+<p>Get OpenWeather API keys</p>
+<p><a class="reference external" href="https://openweathermap.org/">OpenWeather</a> is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.</p>
+<ol class="arabic">
+<li><p>Visit OpenWeather to log in/create an account.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code.png" src="../_images/Real_time_Weather_OLED_Code.png" />
+</li>
+<li><p>Click into the API page from the navigation bar.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code1.png" src="../_images/Real_time_Weather_OLED_Code1.png" />
+</li>
+<li><p>Find <strong>Current Weather Data</strong> and click Subscribe.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code2.png" src="../_images/Real_time_Weather_OLED_Code2.png" />
+</li>
+<li><p>Under <strong>Current weather and forecasts collection</strong>, subscribe to the appropriate service. In our project, Free is good enough.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code3.png" src="../_images/Real_time_Weather_OLED_Code3.png" />
+</li>
+<li><p>Copy the Key from the <strong>API keys</strong> page.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code4.png" src="../_images/Real_time_Weather_OLED_Code4.png" />
+</li>
+<li><p>Copy it to the <code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code> API_KEY.</p>
+<div class="highlight-Arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SECRET_SSID &quot;&lt;SSID&gt;&quot;        </span><span class="c1">// your network SSID (name)</span>
+<span class="cp">#define SECRET_PASS &quot;&lt;PASSWORD&gt;&quot;        </span><span class="c1">// your network password</span>
+<span class="cp">#define API_KEY &quot;&lt;OpenWeather_API_KEY&gt;&quot;</span>
+<span class="cp">#define LOCATION &quot;&lt;YOUR CITY&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set the time zone of your location.</p>
+<p>Take the capital of United Kingdom, London, as an example. Search “London timezone” on Google.</p>
+<img alt="../_images/Real_time_Weather_OLED_Code5.png" src="../_images/Real_time_Weather_OLED_Code5.png" />
+<p>In the search results, you will see “GMT+1”, so you set the parameter of the function below to <code class="docutils literal notranslate"><span class="pre">3600</span> <span class="pre">*</span> <span class="pre">1</span></code> seconds.</p>
+<div class="highlight-Arduino notranslate"><div class="highlight"><pre><span></span><span class="n">timeClient</span><span class="p">.</span><span class="n">setTimeOffset</span><span class="p">(</span><span class="mi">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// Adjust for your time zone (this is +1 hour)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="install-the-library">
+<h2>Install the Library<a class="headerlink" href="#install-the-library" title="Link to this heading"></a></h2>
+<p>To install the library, use the Arduino Library Manager and search for “ArduinoMqttClient”, “FastLED”, “Adafruit GFX” and “Adafruit SSD1306” and install them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ArduinoJson.h</span></code>: Used for handling JSON data (data obtained from openweathermap).</p>
+<p><code class="docutils literal notranslate"><span class="pre">NTPClient.h</span></code>: Used for obtaining real-time time.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Adafruit_GFX.h</span></code>, <code class="docutils literal notranslate"><span class="pre">Adafruit_SSD1306.h</span></code>: Used for OLED module.</p>
+</section>
+<section id="run-the-code">
+<h2>Run the Code<a class="headerlink" href="#run-the-code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">22_Real_time_Weather_OLED.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+<li><p>Or copy this code into Arduino IDE.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the code, SSID and password are stored in <code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code>. Before uploading this example, you need to modify them with your own WiFi credentials. Additionally, for security purposes, ensure that this information is kept confidential when sharing or storing the code.</p>
+</div>
+</section>
+<section id="how-it-works">
+<h2>How it works?<a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h2>
+<p>The code fetches and displays weather information such as temperature, humidity, pressure, and wind details from the OpenWeatherMap API. It connects to a WiFi network, retrieves the current time from an NTP server, and regularly updates the weather data on an OLED screen.</p>
+<ol class="arabic">
+<li><p>Importing Required Libraries</p>
+<p>Import necessary libraries for WiFi, JSON handling, NTP client, and OLED display.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;WiFiS3.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ArduinoJson.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;NTPClient.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFiUdp.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SPI.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_GFX.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_SSD1306.h&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configuration and Variable Initialization</p>
+<p>Define WiFi credentials, server information, display dimensions, and timing variables.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SCREEN_WIDTH 128</span>
+<span class="cp">#define SCREEN_HEIGHT 64</span>
+<span class="cp">#define OLED_RESET 4</span>
+<span class="kr">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_SSID</span><span class="p">;</span>
+<span class="kr">char</span><span class="w"> </span><span class="n">pass</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_PASS</span><span class="p">;</span>
+<span class="kr">char</span><span class="w"> </span><span class="n">server</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;api.openweathermap.org&quot;</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">unsigned</span><span class="w"> </span><span class="kr">long</span><span class="w"> </span><span class="n">postingInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup()</span></code> Function</p>
+<p>Initialize serial communication, connect to WiFi, set up the OLED display, and initialize the NTP client.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nf">Serial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">WL_NO_MODULE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Communication with WiFi module failed!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kr">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kr">String</span><span class="w"> </span><span class="n">fv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fv</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">WIFI_FIRMWARE_LATEST_VERSION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Please upgrade the firmware&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Attempting to connect to SSID: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">printWifiStatus</span><span class="p">();</span>
+<span class="w">  </span><span class="nf">display</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">SSD1306_SWITCHCAPVCC</span><span class="p">,</span><span class="w"> </span><span class="mh">0x3C</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">display</span><span class="p">.</span><span class="n">clearDisplay</span><span class="p">();</span>
+<span class="w">  </span><span class="n">timeClient</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">timeClient</span><span class="p">.</span><span class="n">setTimeOffset</span><span class="p">(</span><span class="mi">3600</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loop()</span></code> Function</p>
+<p>Main loop to read weather data and update the display periodically.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">read_response</span><span class="p">();</span>
+<span class="w">  </span><span class="n">timeClient</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">lastConnectionTime</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nf">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lastConnectionTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">postingInterval</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">httpRequest</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Helper Functions</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">read_response()</span></code>: Parse JSON response and display weather data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">httpRequest()</span></code>: Send HTTP GET request to OpenWeatherMap API.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printWifiStatus()</span></code>: Print WiFi status information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">displayWeatherData()</span></code>: Display weather data on the OLED screen.</p></li>
+</ul>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">read_response</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// JSON parsing and display logic</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">httpRequest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// HTTP request logic</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">printWifiStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Print WiFi status</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">displayWeatherData</span><span class="p">(</span><span class="kr">String</span><span class="w"> </span><span class="n">weather</span><span class="p">,</span><span class="w"> </span><span class="kr">float</span><span class="w"> </span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">humidity</span><span class="p">,</span><span class="w"> </span><span class="kr">float</span><span class="w"> </span><span class="n">pressure</span><span class="p">,</span><span class="w"> </span><span class="kr">float</span><span class="w"> </span><span class="n">wind_speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Display weather data on OLED</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Ping-Pong_Game.html" class="btn btn-neutral float-left" title="Ping-Pong Game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

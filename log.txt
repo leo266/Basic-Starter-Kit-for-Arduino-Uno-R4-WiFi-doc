@@ -1,0 +1,1628 @@
+Read the Docs build information
+Build id: 29701337
+Project: basic-starter-kit-for-arduino-uno-r4-wifi-doc
+Version: latest
+Commit: 075f4a7a953843e884147ce34f969356ca51f238
+Date: 2025-09-24T04:50:34.702664Z
+State: finished
+Success: False
+
+
+[rtd-command-info] start-time: 2025-09-24T04:50:35.169928Z, end-time: 2025-09-24T04:50:35.885176Z, duration: 0, exit-code: 0
+git clone --depth 1 https://github.com/leo266/Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-doc.git .
+Cloning into '.'...
+
+[rtd-command-info] start-time: 2025-09-24T04:50:35.923930Z, end-time: 2025-09-24T04:50:36.157569Z, duration: 0, exit-code: 0
+git fetch origin --force --prune --prune-tags --depth 50 refs/heads/main:refs/remotes/origin/main
+
+
+[rtd-command-info] start-time: 2025-09-24T04:50:36.252024Z, end-time: 2025-09-24T04:50:36.429700Z, duration: 0, exit-code: 0
+git checkout --force origin/main
+Note: switching to 'origin/main'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 075f4a7 docs: 移除不再需要的PDF生成依赖
+
+[rtd-command-info] start-time: 2025-09-24T04:50:36.492447Z, end-time: 2025-09-24T04:50:36.535641Z, duration: 0, exit-code: 0
+cat .readthedocs.yaml
+# Read the Docs configuration file for Sphinx projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the OS, Python version and other tools you might need
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.12"
+    # You can also specify other tool versions:
+    # nodejs: "20"
+    # rust: "1.70"
+    # golang: "1.20"
+
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: docs/source/conf.py
+  # You can configure Sphinx to use a different builder, for instance use the dirhtml builder for simpler URLs
+  # builder: "dirhtml"
+  # Fail on all warnings to avoid broken references
+  # fail_on_warning: true
+
+# Optionally build your docs in additional formats such as PDF and ePub
+formats:
+  - pdf
+  - epub
+
+# Optional but recommended, declare the Python requirements required
+# to build your documentation
+# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
+python:
+    install:
+    - requirements: docs/requirements.txt
+
+[rtd-command-info] start-time: 2025-09-24T04:50:41.543939Z, end-time: 2025-09-24T04:50:41.604622Z, duration: 0, exit-code: 0
+asdf global python 3.12.10
+
+
+[rtd-command-info] start-time: 2025-09-24T04:50:42.010648Z, end-time: 2025-09-24T04:50:43.241739Z, duration: 1, exit-code: 0
+python -mvirtualenv $READTHEDOCS_VIRTUALENV_PATH
+created virtual environment CPython3.12.10.final.0-64 in 896ms
+  creator CPython3Posix(dest=/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/docs/.local/share/virtualenv)
+    added seed packages: pip==23.1, setuptools==67.6.1, wheel==0.40.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+[rtd-command-info] start-time: 2025-09-24T04:50:43.286308Z, end-time: 2025-09-24T04:50:51.796123Z, duration: 8, exit-code: 0
+python -m pip install --upgrade --no-cache-dir pip setuptools
+Requirement already satisfied: pip in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (23.1)
+Collecting pip
+  Downloading pip-25.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 3.4 MB/s eta 0:00:00
+Requirement already satisfied: setuptools in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (67.6.1)
+Collecting setuptools
+  Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 18.2 MB/s eta 0:00:00
+Installing collected packages: setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 67.6.1
+    Uninstalling setuptools-67.6.1:
+      Successfully uninstalled setuptools-67.6.1
+  Attempting uninstall: pip
+    Found existing installation: pip 23.1
+    Uninstalling pip-23.1:
+      Successfully uninstalled pip-23.1
+Successfully installed pip-25.2 setuptools-80.9.0
+
+[rtd-command-info] start-time: 2025-09-24T04:50:51.838232Z, end-time: 2025-09-24T04:50:56.812274Z, duration: 4, exit-code: 0
+python -m pip install --upgrade --no-cache-dir sphinx
+Collecting sphinx
+  Downloading sphinx-8.2.3-py3-none-any.whl.metadata (7.0 kB)
+Collecting sphinxcontrib-applehelp>=1.0.7 (from sphinx)
+  Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-devhelp>=1.0.6 (from sphinx)
+  Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-htmlhelp>=2.0.6 (from sphinx)
+  Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-jsmath>=1.0.1 (from sphinx)
+  Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting sphinxcontrib-qthelp>=1.0.6 (from sphinx)
+  Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-serializinghtml>=1.1.9 (from sphinx)
+  Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting Jinja2>=3.1 (from sphinx)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting Pygments>=2.17 (from sphinx)
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting docutils<0.22,>=0.20 (from sphinx)
+  Downloading docutils-0.21.2-py3-none-any.whl.metadata (2.8 kB)
+Collecting snowballstemmer>=2.2 (from sphinx)
+  Downloading snowballstemmer-3.0.1-py3-none-any.whl.metadata (7.9 kB)
+Collecting babel>=2.13 (from sphinx)
+  Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
+Collecting alabaster>=0.7.14 (from sphinx)
+  Downloading alabaster-1.0.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting imagesize>=1.3 (from sphinx)
+  Downloading imagesize-1.4.1-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting requests>=2.30.0 (from sphinx)
+  Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting roman-numerals-py>=1.0.0 (from sphinx)
+  Downloading roman_numerals_py-3.1.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting packaging>=23.0 (from sphinx)
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1->sphinx)
+  Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.30.0->sphinx)
+  Downloading charset_normalizer-3.4.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests>=2.30.0->sphinx)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.30.0->sphinx)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.30.0->sphinx)
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Downloading sphinx-8.2.3-py3-none-any.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 99.9 MB/s  0:00:00
+Downloading docutils-0.21.2-py3-none-any.whl (587 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 587.4/587.4 kB 450.5 MB/s  0:00:00
+Downloading alabaster-1.0.0-py3-none-any.whl (13 kB)
+Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 366.5 MB/s  0:00:00
+Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 597.0 MB/s  0:00:00
+Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+Downloading roman_numerals_py-3.1.0-py3-none-any.whl (7.7 kB)
+Downloading snowballstemmer-3.0.1-py3-none-any.whl (103 kB)
+Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl (119 kB)
+Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl (82 kB)
+Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)
+Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl (88 kB)
+Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+Installing collected packages: urllib3, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, snowballstemmer, roman-numerals-py, Pygments, packaging, MarkupSafe, imagesize, idna, docutils, charset_normalizer, certifi, babel, alabaster, requests, Jinja2, sphinx
+
+Successfully installed Jinja2-3.1.6 MarkupSafe-3.0.2 Pygments-2.19.2 alabaster-1.0.0 babel-2.17.0 certifi-2025.8.3 charset_normalizer-3.4.3 docutils-0.21.2 idna-3.10 imagesize-1.4.1 packaging-25.0 requests-2.32.5 roman-numerals-py-3.1.0 snowballstemmer-3.0.1 sphinx-8.2.3 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0 urllib3-2.5.0
+
+[rtd-command-info] start-time: 2025-09-24T04:50:56.852164Z, end-time: 2025-09-24T04:50:59.944351Z, duration: 3, exit-code: 0
+python -m pip install --exists-action=w --no-cache-dir -r docs/requirements.txt
+Collecting sphinx==7.2.5 (from -r docs/requirements.txt (line 2))
+  Downloading sphinx-7.2.5-py3-none-any.whl.metadata (5.9 kB)
+Collecting sphinx-rtd-theme (from -r docs/requirements.txt (line 3))
+  Downloading sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting sphinx_conestack_theme (from -r docs/requirements.txt (line 4))
+  Downloading sphinx_conestack_theme-1.0.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting readthedocs-sphinx-search (from -r docs/requirements.txt (line 5))
+  Downloading readthedocs_sphinx_search-0.3.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting myst-parser (from -r docs/requirements.txt (line 6))
+  Downloading myst_parser-4.0.1-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: sphinxcontrib-applehelp in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-devhelp in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-jsmath in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.1.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.9 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-qthelp in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.0.0)
+Requirement already satisfied: Jinja2>=3.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: Pygments>=2.14 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.19.2)
+Collecting docutils<0.21,>=0.18.1 (from sphinx==7.2.5->-r docs/requirements.txt (line 2))
+  Downloading docutils-0.20.1-py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: snowballstemmer>=2.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (3.0.1)
+Requirement already satisfied: babel>=2.9 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.17.0)
+Collecting alabaster<0.8,>=0.7 (from sphinx==7.2.5->-r docs/requirements.txt (line 2))
+  Downloading alabaster-0.7.16-py3-none-any.whl.metadata (2.9 kB)
+Requirement already satisfied: imagesize>=1.3 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (1.4.1)
+Requirement already satisfied: requests>=2.25.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.32.5)
+Requirement already satisfied: packaging>=21.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from sphinx==7.2.5->-r docs/requirements.txt (line 2)) (25.0)
+Collecting sphinxcontrib-jquery<5,>=4 (from sphinx-rtd-theme->-r docs/requirements.txt (line 3))
+  Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is looking at multiple versions of sphinx-conestack-theme to determine which version is compatible with other requirements. This could take a while.
+Collecting sphinx_conestack_theme (from -r docs/requirements.txt (line 4))
+  Downloading sphinx_conestack_theme-1.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting markdown-it-py~=3.0 (from myst-parser->-r docs/requirements.txt (line 6))
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting mdit-py-plugins>=0.4.1,~=0.4 (from myst-parser->-r docs/requirements.txt (line 6))
+  Downloading mdit_py_plugins-0.5.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting pyyaml (from myst-parser->-r docs/requirements.txt (line 6))
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting mdurl~=0.1 (from markdown-it-py~=3.0->myst-parser->-r docs/requirements.txt (line 6))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from Jinja2>=3.0->sphinx==7.2.5->-r docs/requirements.txt (line 2)) (3.0.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from requests>=2.25.0->sphinx==7.2.5->-r docs/requirements.txt (line 2)) (3.4.3)
+Requirement already satisfied: idna<4,>=2.5 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from requests>=2.25.0->sphinx==7.2.5->-r docs/requirements.txt (line 2)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from requests>=2.25.0->sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/envs/latest/lib/python3.12/site-packages (from requests>=2.25.0->sphinx==7.2.5->-r docs/requirements.txt (line 2)) (2025.8.3)
+Downloading sphinx-7.2.5-py3-none-any.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 86.8 MB/s  0:00:00
+Downloading alabaster-0.7.16-py3-none-any.whl (13 kB)
+Downloading docutils-0.20.1-py3-none-any.whl (572 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 572.7/572.7 kB 570.9 MB/s  0:00:00
+Downloading sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl (7.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.7/7.7 MB 378.2 MB/s  0:00:00
+Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+Downloading sphinx_conestack_theme-1.0-py3-none-any.whl (622 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 622.5/622.5 kB 188.9 MB/s  0:00:00
+Downloading readthedocs_sphinx_search-0.3.2-py3-none-any.whl (21 kB)
+Downloading myst_parser-4.0.1-py3-none-any.whl (84 kB)
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+Downloading mdit_py_plugins-0.5.0-py3-none-any.whl (57 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 607.3 MB/s  0:00:00
+Installing collected packages: readthedocs-sphinx-search, pyyaml, mdurl, docutils, alabaster, sphinx, markdown-it-py, sphinxcontrib-jquery, sphinx_conestack_theme, mdit-py-plugins, sphinx-rtd-theme, myst-parser
+  Attempting uninstall: docutils
+    Found existing installation: docutils 0.21.2
+    Uninstalling docutils-0.21.2:
+      Successfully uninstalled docutils-0.21.2
+  Attempting uninstall: alabaster
+    Found existing installation: alabaster 1.0.0
+    Uninstalling alabaster-1.0.0:
+      Successfully uninstalled alabaster-1.0.0
+  Attempting uninstall: sphinx
+    Found existing installation: Sphinx 8.2.3
+    Uninstalling Sphinx-8.2.3:
+      Successfully uninstalled Sphinx-8.2.3
+
+Successfully installed alabaster-0.7.16 docutils-0.20.1 markdown-it-py-3.0.0 mdit-py-plugins-0.5.0 mdurl-0.1.2 myst-parser-4.0.1 pyyaml-6.0.2 readthedocs-sphinx-search-0.3.2 sphinx-7.2.5 sphinx-rtd-theme-3.0.2 sphinx_conestack_theme-1.0 sphinxcontrib-jquery-4.1
+
+[rtd-command-info] start-time: 2025-09-24T04:51:00.019551Z, end-time: 2025-09-24T04:51:00.063271Z, duration: 0, exit-code: 0
+cat docs/source/conf.py
+# Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+#import sphinx_conestack_theme
+from pygments.lexers import Python3Lexer
+import time
+
+project = 'Basic Starter Kit for Arduino UNO R4 WiFi'
+copyright = '2024,Bot'
+author = 'Bot'
+
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+extensions = ["myst_parser"]
+pygments_lexers = {
+    "python-repl": Python3Lexer(),
+}
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+
+# 定义主文档
+master_doc = 'index'
+
+templates_path = ['_templates']
+exclude_patterns = []
+
+
+
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+#html_theme = 'conestack'
+#html_theme_path = [sphinx_pdj_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
+#html_theme = 'press'
+
+# html_static_path = ['_static']
+# html_logo = '_static/Logo2.png'
+
+#html_theme_options = {
+#     'logo_only': True,
+#     'display_version': False,
+# }
+
+html_theme_options = {
+     'logo_only': True,
+     'display_version': False,
+     'vcs_pageview_mode': '',
+ }
+
+# -- Options for LaTeX output -------------------------------------------------
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '11pt',
+    'figure_align': 'htbp',
+    'preamble': '',
+    # 添加额外的LaTeX包
+    'extrapackages': r'''
+        \usepackage{graphicx}
+        \usepackage{booktabs}
+        \usepackage{multirow}
+        \usepackage{xcolor}
+    ''',
+    # 自定义标题页
+    'maketitle': r'''
+        \maketitle
+        \tableofcontents
+    ''',
+}
+
+latex_documents = [
+    (master_doc, 'BasicStarterKitforArduinoUNOR4WiFi.tex', 'Basic Starter Kit for Arduino UNO R4 WiFi',
+     'Bot', 'manual'),
+]
+
+# Configure the "View page source" link
+html_context = {
+    'display_github': False,
+    'github_user': '',
+    'github_repo': '',
+    'github_version': '',
+    'conf_py_path': '',
+}
+
+[rtd-command-info] start-time: 2025-09-24T04:51:00.102721Z, end-time: 2025-09-24T04:51:02.728280Z, duration: 2, exit-code: 0
+python -m sphinx -T -b html -d _build/doctrees -D language=en . $READTHEDOCS_OUTPUT/html
+Running Sphinx v7.2.5
+making output directory... done
+myst v4.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=set(), disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_sort=True, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+building [mo]: targets for 0 po files that are out of date
+writing output... 
+building [html]: targets for 53 source files that are out of date
+updating environment: [new config] 53 added, 0 changed, 0 removed
+[2Kreading sources... [  2%] Basic_Project/0.96_inch_OLED
+[2Kreading sources... [  4%] Basic_Project/2_Channel_Relay_Module
+[2Kreading sources... [  6%] Basic_Project/Active_Buzzer
+[2Kreading sources... [  8%] Basic_Project/Audio_Module_Speaker
+[2Kreading sources... [  9%] Basic_Project/Basic_Project
+[2Kreading sources... [ 11%] Basic_Project/Button_LED
+[2Kreading sources... [ 13%] Basic_Project/DHT11_Module
+[2Kreading sources... [ 15%] Basic_Project/Joystick_Module
+[2Kreading sources... [ 17%] Basic_Project/LED_Blink
+[2Kreading sources... [ 19%] Basic_Project/PIR_Motion_Sensor
+[2Kreading sources... [ 21%] Basic_Project/Passive_Buzzer
+[2Kreading sources... [ 23%] Basic_Project/Photoresistor
+[2Kreading sources... [ 25%] Basic_Project/Potentiometer
+[2Kreading sources... [ 26%] Basic_Project/RGB_LED
+[2Kreading sources... [ 28%] Basic_Project/Thermistor
+[2Kreading sources... [ 30%] Components_Kit/Components_Kit
+[2Kreading sources... [ 32%] Components_Kit/Components_joystick_module
+[2Kreading sources... [ 34%] Components_Kit/component_UNO_R4
+[2Kreading sources... [ 36%] Components_Kit/component_audio_speaker
+[2Kreading sources... [ 38%] Components_Kit/component_breadboard
+[2Kreading sources... [ 40%] Components_Kit/component_button
+[2Kreading sources... [ 42%] Components_Kit/component_buzzer
+[2Kreading sources... [ 43%] Components_Kit/component_humiture_sensor
+[2Kreading sources... [ 45%] Components_Kit/component_led
+[2Kreading sources... [ 47%] Components_Kit/component_oled
+[2Kreading sources... [ 49%] Components_Kit/component_photoresistor
+[2Kreading sources... [ 51%] Components_Kit/component_pir
+[2Kreading sources... [ 53%] Components_Kit/component_potentiometer
+[2Kreading sources... [ 55%] Components_Kit/component_relay
+[2Kreading sources... [ 57%] Components_Kit/component_resistor
+[2Kreading sources... [ 58%] Components_Kit/component_rgb_led
+[2Kreading sources... [ 60%] Components_Kit/component_thermistor
+[2Kreading sources... [ 62%] Components_Kit/component_tilt_switch
+[2Kreading sources... [ 64%] Components_Kit/component_transistor
+[2Kreading sources... [ 66%] Components_Kit/component_wires
+[2Kreading sources... [ 68%] Download_the_Code/Download_the_Code
+[2Kreading sources... [ 70%] Extension_Project/12x8_LED_Matrix
+[2Kreading sources... [ 72%] Extension_Project/Digital_Dice_LED_Matrix
+[2Kreading sources... [ 74%] Extension_Project/Extension_Project
+[2Kreading sources... [ 75%] Extension_Project/Greedy_Snake_Game
+[2Kreading sources... [ 77%] Extension_Project/Ping-Pong_Game
+[2Kreading sources... [ 79%] Extension_Project/Real-time_Weather_OLED
+[2Kreading sources... [ 81%] Extension_Project/Web_Control_LED
+[2Kreading sources... [ 83%] Extension_Project/Web_Control_Relay
+[2Kreading sources... [ 85%] Extension_Project/WiFi_Connect_Test
+[2Kreading sources... [ 87%] Get_Started_with_Arduino/Creating_Opening_Saving_Sketches
+[2Kreading sources... [ 89%] Get_Started_with_Arduino/Get_Started_with_Arduino
+[2Kreading sources... [ 91%] Get_Started_with_Arduino/How_to_Build_the_Circuit
+[2Kreading sources... [ 92%] Get_Started_with_Arduino/How_to_Upload_Sketch
+[2Kreading sources... [ 94%] Get_Started_with_Arduino/How_to_add_Libraries
+[2Kreading sources... [ 96%] Get_Started_with_Arduino/Install_Arduino_IDE
+[2Kreading sources... [ 98%] Get_Started_with_Arduino/Sketch_Writing_Rules
+[2Kreading sources... [100%] index
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Web_Control_Relay.rst:55: WARNING: Block quote ends without a blank line; unexpected unindent.
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/WiFi_Connect_Test.rst:33: WARNING: Title underline too short.
+
+2. Code explanation
+------------------
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/WiFi_Connect_Test.rst:33: WARNING: Title underline too short.
+
+2. Code explanation
+------------------
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Get_Started_with_Arduino/Creating_Opening_Saving_Sketches.rst:94: WARNING: Enumerated list ends without a blank line; unexpected unindent.
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Get_Started_with_Arduino/Creating_Opening_Saving_Sketches.rst:96: ERROR: Unexpected indentation.
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... WARNING: unsupported theme option 'display_version' given
+done
+copying assets... copying static files... done
+copying extra files... done
+done
+[2Kwriting output... [  2%] Basic_Project/0.96_inch_OLED
+[2Kwriting output... [  4%] Basic_Project/2_Channel_Relay_Module
+[2Kwriting output... [  6%] Basic_Project/Active_Buzzer
+[2Kwriting output... [  8%] Basic_Project/Audio_Module_Speaker
+[2Kwriting output... [  9%] Basic_Project/Basic_Project
+[2Kwriting output... [ 11%] Basic_Project/Button_LED
+[2Kwriting output... [ 13%] Basic_Project/DHT11_Module
+[2Kwriting output... [ 15%] Basic_Project/Joystick_Module
+[2Kwriting output... [ 17%] Basic_Project/LED_Blink
+[2Kwriting output... [ 19%] Basic_Project/PIR_Motion_Sensor
+[2Kwriting output... [ 21%] Basic_Project/Passive_Buzzer
+[2Kwriting output... [ 23%] Basic_Project/Photoresistor
+[2Kwriting output... [ 25%] Basic_Project/Potentiometer
+[2Kwriting output... [ 26%] Basic_Project/RGB_LED
+[2Kwriting output... [ 28%] Basic_Project/Thermistor
+[2Kwriting output... [ 30%] Components_Kit/Components_Kit
+[2Kwriting output... [ 32%] Components_Kit/Components_joystick_module
+[2Kwriting output... [ 34%] Components_Kit/component_UNO_R4
+[2Kwriting output... [ 36%] Components_Kit/component_audio_speaker
+[2Kwriting output... [ 38%] Components_Kit/component_breadboard
+[2Kwriting output... [ 40%] Components_Kit/component_button
+[2Kwriting output... [ 42%] Components_Kit/component_buzzer
+[2Kwriting output... [ 43%] Components_Kit/component_humiture_sensor
+[2Kwriting output... [ 45%] Components_Kit/component_led
+[2Kwriting output... [ 47%] Components_Kit/component_oled
+[2Kwriting output... [ 49%] Components_Kit/component_photoresistor
+[2Kwriting output... [ 51%] Components_Kit/component_pir
+[2Kwriting output... [ 53%] Components_Kit/component_potentiometer
+[2Kwriting output... [ 55%] Components_Kit/component_relay
+[2Kwriting output... [ 57%] Components_Kit/component_resistor
+[2Kwriting output... [ 58%] Components_Kit/component_rgb_led
+[2Kwriting output... [ 60%] Components_Kit/component_thermistor
+[2Kwriting output... [ 62%] Components_Kit/component_tilt_switch
+[2Kwriting output... [ 64%] Components_Kit/component_transistor
+[2Kwriting output... [ 66%] Components_Kit/component_wires
+[2Kwriting output... [ 68%] Download_the_Code/Download_the_Code
+[2Kwriting output... [ 70%] Extension_Project/12x8_LED_Matrix
+[2Kwriting output... [ 72%] Extension_Project/Digital_Dice_LED_Matrix
+[2Kwriting output... [ 74%] Extension_Project/Extension_Project
+[2Kwriting output... [ 75%] Extension_Project/Greedy_Snake_Game
+[2Kwriting output... [ 77%] Extension_Project/Ping-Pong_Game
+[2Kwriting output... [ 79%] Extension_Project/Real-time_Weather_OLED
+[2Kwriting output... [ 81%] Extension_Project/Web_Control_LED
+[2Kwriting output... [ 83%] Extension_Project/Web_Control_Relay
+[2Kwriting output... [ 85%] Extension_Project/WiFi_Connect_Test
+[2Kwriting output... [ 87%] Get_Started_with_Arduino/Creating_Opening_Saving_Sketches
+[2Kwriting output... [ 89%] Get_Started_with_Arduino/Get_Started_with_Arduino
+[2Kwriting output... [ 91%] Get_Started_with_Arduino/How_to_Build_the_Circuit
+[2Kwriting output... [ 92%] Get_Started_with_Arduino/How_to_Upload_Sketch
+[2Kwriting output... [ 94%] Get_Started_with_Arduino/How_to_add_Libraries
+[2Kwriting output... [ 96%] Get_Started_with_Arduino/Install_Arduino_IDE
+[2Kwriting output... [ 98%] Get_Started_with_Arduino/Sketch_Writing_Rules
+[2Kwriting output... [100%] index
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/12x8_LED_Matrix.rst:194: WARNING: undefined label: 'fun_snake'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Ping-Pong_Game.rst:23: WARNING: undefined label: 'cpn_power'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Web_Control_LED.rst:74: WARNING: undefined label: 'update_firmware'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/WiFi_Connect_Test.rst:92: WARNING: undefined label: 'update_firmware'
+generating indices... genindex done
+writing additional pages... search done
+[2Kcopying images... [  1%] Basic_Project/img/0.96_inch_OLED_Wiring.png
+[2Kcopying images... [  1%] Basic_Project/img/0.96_inch_OLED_Wiring1.png
+[2Kcopying images... [  2%] Basic_Project/img/Realy_Wiring.png
+[2Kcopying images... [  3%] Basic_Project/img/Active_Buzzer.png
+[2Kcopying images... [  3%] Basic_Project/img/Active_Buzzer_Wiring.png
+[2Kcopying images... [  4%] Basic_Project/img/Active_Buzzer_Wiring1.png
+[2Kcopying images... [  5%] Basic_Project/img/Audio_Speaker_Wiring.png
+[2Kcopying images... [  5%] Basic_Project/img/Audio_Speaker_Wiring1.png
+[2Kcopying images... [  6%] Basic_Project/img/Audio_Speaker_Code.png
+[2Kcopying images... [  7%] Basic_Project/img/Button_LED_Wiring.png
+[2Kcopying images... [  8%] Basic_Project/img/DHT11_Module_Wiring.png
+[2Kcopying images... [  8%] Basic_Project/img/DHT11_Module_Wiring1.png
+[2Kcopying images... [  9%] Basic_Project/img/Joystick_Wiring.png
+[2Kcopying images... [ 10%] Basic_Project/img/Joystick_Wiring1.png
+[2Kcopying images... [ 10%] Basic_Project/img/Led_Blink_Wiring.png
+[2Kcopying images... [ 11%] Basic_Project/img/Led_Blink_Wiring1.png
+[2Kcopying images... [ 12%] Basic_Project/img/PIR_Wiring.png
+[2Kcopying images... [ 12%] Basic_Project/img/PIR_Wiring1.png
+[2Kcopying images... [ 13%] Basic_Project/img/Passive_Buzzer_Wiring.png
+[2Kcopying images... [ 14%] Basic_Project/img/Passive_Buzzer_Wiring1.png
+[2Kcopying images... [ 14%] Basic_Project/img/Passive_Buzzer_Code.png
+[2Kcopying images... [ 15%] Basic_Project/img/Photoresistor_Wiring.png
+[2Kcopying images... [ 16%] Basic_Project/img/Photoresistor_Wiring1.png
+[2Kcopying images... [ 16%] Basic_Project/img/Potentiometer_Wiring.png
+[2Kcopying images... [ 17%] Basic_Project/img/Potentiometer_Wiring1.png
+[2Kcopying images... [ 18%] Basic_Project/img/RGB_LED_PWM.png
+[2Kcopying images... [ 18%] Basic_Project/img/RGB_LED_Wiring.png
+[2Kcopying images... [ 19%] Basic_Project/img/RGB_LED_Wiring1.png
+[2Kcopying images... [ 20%] Basic_Project/img/RGB_LED_Code.png
+[2Kcopying images... [ 21%] Basic_Project/img/RGB_LED_Code1.png
+[2Kcopying images... [ 21%] Basic_Project/img/Thermistor_Wiring.png
+[2Kcopying images... [ 22%] Basic_Project/img/Thermistor_Wiring1.png
+[2Kcopying images... [ 23%] Components_Kit/img/list.jpg
+[2Kcopying images... [ 23%] Components_Kit/img/joystick_pic.png
+[2Kcopying images... [ 24%] Components_Kit/img/joystick318.png
+[2Kcopying images... [ 25%] Components_Kit/img/unor4.jpg
+[2Kcopying images... [ 25%] Components_Kit/img/unor4_wifi_pinout.png
+[2Kcopying images... [ 26%] Components_Kit/img/speaker_pic.png
+[2Kcopying images... [ 27%] Components_Kit/img/2030_speaker.png
+[2Kcopying images... [ 27%] Components_Kit/img/audio_module.jpg
+[2Kcopying images... [ 28%] Components_Kit/img/breadboard.png
+[2Kcopying images... [ 29%] Components_Kit/img/breadboard_internal.png
+[2Kcopying images... [ 29%] Components_Kit/img/breadboard_internal1.png
+[2Kcopying images... [ 30%] Components_Kit/img/button.png
+[2Kcopying images... [ 31%] Components_Kit/img/button_symbol.png
+[2Kcopying images... [ 32%] Components_Kit/img/button3.png
+[2Kcopying images... [ 32%] Components_Kit/img/buzzer2.png
+[2Kcopying images... [ 33%] Components_Kit/img/buzzer1.png
+[2Kcopying images... [ 34%] Components_Kit/img/buzzer_symbol.png
+[2Kcopying images... [ 34%] Components_Kit/img/dht11_pic.png
+[2Kcopying images... [ 35%] Components_Kit/img/LED.png
+[2Kcopying images... [ 36%] Components_Kit/img/led_symbol.png
+[2Kcopying images... [ 36%] Components_Kit/img/oled.png
+[2Kcopying images... [ 37%] Components_Kit/img/photoresistor.png
+[2Kcopying images... [ 38%] Components_Kit/img/photoresistor_symbol.png
+[2Kcopying images... [ 38%] Components_Kit/img/PIR1.png
+[2Kcopying images... [ 39%] Components_Kit/img/PIR2.png
+[2Kcopying images... [ 40%] Components_Kit/img/PIR3.png
+[2Kcopying images... [ 40%] Components_Kit/img/potentiometer.png
+[2Kcopying images... [ 41%] Components_Kit/img/potentiometer_symbol.png
+[2Kcopying images... [ 42%] Components_Kit/img/relay_1.png
+[2Kcopying images... [ 42%] Components_Kit/img/relay_2.png
+[2Kcopying images... [ 43%] Components_Kit/img/relay_3.png
+[2Kcopying images... [ 44%] Components_Kit/img/relay_4.png
+[2Kcopying images... [ 45%] Components_Kit/img/resistor.png
+[2Kcopying images... [ 45%] Components_Kit/img/resistor_symbol.png
+[2Kcopying images... [ 46%] Components_Kit/img/resistance_card.jpg
+[2Kcopying images... [ 47%] Components_Kit/img/220ohm.jpg
+[2Kcopying images... [ 47%] Components_Kit/img/rgb_led.png
+[2Kcopying images... [ 48%] Components_Kit/img/rgb_light.png
+[2Kcopying images... [ 49%] Components_Kit/img/rgb_symbol.png
+[2Kcopying images... [ 49%] Components_Kit/img/rgb_pin.jpg
+[2Kcopying images... [ 50%] Components_Kit/img/thermistor.png
+[2Kcopying images... [ 51%] Components_Kit/img/thermistor_symbol.png
+[2Kcopying images... [ 51%] Components_Kit/img/tilt_switch.png
+[2Kcopying images... [ 52%] Components_Kit/img/tilt_symbol.png
+[2Kcopying images... [ 53%] Components_Kit/img/npn_pnp.png
+[2Kcopying images... [ 53%] Components_Kit/img/transistor_symbol.png
+[2Kcopying images... [ 54%] Components_Kit/img/ebc.png
+[2Kcopying images... [ 55%] Components_Kit/img/Jumper_Wires.png
+[2Kcopying images... [ 55%] Extension_Project/img/LED_Matrix.png
+[2Kcopying images... [ 56%] Extension_Project/img/LED_Matrix_editor.png
+[2Kcopying images... [ 57%] Extension_Project/img/LED_Matrix_editor1.png
+[2Kcopying images... [ 58%] Extension_Project/img/LED_Matrix_editor2.png
+[2Kcopying images... [ 58%] Extension_Project/img/LED_Matrix_editor3.png
+[2Kcopying images... [ 59%] Extension_Project/img/LED_Matrix_editor4.png
+[2Kcopying images... [ 60%] Extension_Project/img/LED_Matrix_editor5.png
+[2Kcopying images... [ 60%] Extension_Project/img/LED_Matrix_code.png
+[2Kcopying images... [ 61%] Extension_Project/img/Digital_Dice_LED_Matrix_Wiring.png
+[2Kcopying images... [ 62%] Extension_Project/img/Greedy_Snake_Game_Wiring.png
+[2Kcopying images... [ 62%] Extension_Project/img/Greedy_Snake_Game_Wiring1.png
+[2Kcopying images... [ 63%] Extension_Project/img/Ping_Pong_Game_Wiring.png
+[2Kcopying images... [ 64%] Extension_Project/img/Ping_Pong_Game_Wiring1.png
+[2Kcopying images... [ 64%] Extension_Project/img/Real_time_Weather_OLED_Wiring.png
+[2Kcopying images... [ 65%] Extension_Project/img/Real_time_Weather_OLED_Wiring1.png
+[2Kcopying images... [ 66%] Extension_Project/img/Real_time_Weather_OLED_Code.png
+[2Kcopying images... [ 66%] Extension_Project/img/Real_time_Weather_OLED_Code1.png
+[2Kcopying images... [ 67%] Extension_Project/img/Real_time_Weather_OLED_Code2.png
+[2Kcopying images... [ 68%] Extension_Project/img/Real_time_Weather_OLED_Code3.png
+[2Kcopying images... [ 68%] Extension_Project/img/Real_time_Weather_OLED_Code4.png
+[2Kcopying images... [ 69%] Extension_Project/img/Real_time_Weather_OLED_Code5.png
+[2Kcopying images... [ 70%] Extension_Project/img/Web_Control_LED.png
+[2Kcopying images... [ 71%] Extension_Project/img/Web_Control_Realy.png
+[2Kcopying images... [ 71%] Extension_Project/img/Web_Control_Realy_Wiring.png
+[2Kcopying images... [ 72%] Extension_Project/img/Web_Control_Realy_Code.png
+[2Kcopying images... [ 73%] Extension_Project/img/Web_Control_Realy_Code1.png
+[2Kcopying images... [ 73%] Extension_Project/img/WiFi_Connect_Test.png
+[2Kcopying images... [ 74%] Get_Started_with_Arduino/img/Creat_Skerch0.png
+[2Kcopying images... [ 75%] Get_Started_with_Arduino/img/Creat_Skerch1.png
+[2Kcopying images... [ 75%] Get_Started_with_Arduino/img/Creat_Skerch2.png
+[2Kcopying images... [ 76%] Get_Started_with_Arduino/img/Creat_Skerch3.png
+[2Kcopying images... [ 77%] Get_Started_with_Arduino/img/Creat_Skerch4.png
+[2Kcopying images... [ 77%] Get_Started_with_Arduino/img/Creat_Skerch5.png
+[2Kcopying images... [ 78%] Get_Started_with_Arduino/img/Bulid_Circuit1.png
+[2Kcopying images... [ 79%] Get_Started_with_Arduino/img/Bulid_Circuit2.png
+[2Kcopying images... [ 79%] Get_Started_with_Arduino/img/Bulid_Circuit3.png
+[2Kcopying images... [ 80%] Get_Started_with_Arduino/img/Bulid_Circuit4.png
+[2Kcopying images... [ 81%] Get_Started_with_Arduino/img/Bulid_Circuit4-4.png
+[2Kcopying images... [ 82%] Get_Started_with_Arduino/img/Bulid_Circuit5.png
+[2Kcopying images... [ 82%] Get_Started_with_Arduino/img/Bulid_Circuit6.png
+[2Kcopying images... [ 83%] Get_Started_with_Arduino/img/Bulid_Circuit7.png
+[2Kcopying images... [ 84%] Get_Started_with_Arduino/img/Bulid_Circuit8.png
+[2Kcopying images... [ 84%] Get_Started_with_Arduino/img/Upload_Sketch1.png
+[2Kcopying images... [ 85%] Get_Started_with_Arduino/img/Upload_Sketch2.png
+[2Kcopying images... [ 86%] Get_Started_with_Arduino/img/Upload_Sketch1-1.png
+[2Kcopying images... [ 86%] Get_Started_with_Arduino/img/Upload_Sketch1-2.png
+[2Kcopying images... [ 87%] Get_Started_with_Arduino/img/Upload_Sketch3.png
+[2Kcopying images... [ 88%] Get_Started_with_Arduino/img/Upload_Sketch4.png
+[2Kcopying images... [ 88%] Get_Started_with_Arduino/img/Upload_Sketch5.png
+[2Kcopying images... [ 89%] Get_Started_with_Arduino/img/Upload_Sketch6.png
+[2Kcopying images... [ 90%] Get_Started_with_Arduino/img/Upload_Sketch7.png
+[2Kcopying images... [ 90%] Get_Started_with_Arduino/img/Upload_Sketch8.png
+[2Kcopying images... [ 91%] Get_Started_with_Arduino/img/Library1.png
+[2Kcopying images... [ 92%] Get_Started_with_Arduino/img/Library2.png
+[2Kcopying images... [ 92%] Get_Started_with_Arduino/img/Library3.png
+[2Kcopying images... [ 93%] Get_Started_with_Arduino/img/Library4.png
+[2Kcopying images... [ 94%] Get_Started_with_Arduino/img/Library5.png
+[2Kcopying images... [ 95%] Get_Started_with_Arduino/img/Library6.png
+[2Kcopying images... [ 95%] Get_Started_with_Arduino/img/Install_Arduino_IDE_1.png
+[2Kcopying images... [ 96%] Get_Started_with_Arduino/img/Install_Arduino_IDE_2.png
+[2Kcopying images... [ 97%] Get_Started_with_Arduino/img/Install_Arduino_IDE_3.png
+[2Kcopying images... [ 97%] Get_Started_with_Arduino/img/Install_Arduino_IDE_4.png
+[2Kcopying images... [ 98%] Get_Started_with_Arduino/img/Install_Arduino_IDE_5.png
+[2Kcopying images... [ 99%] Get_Started_with_Arduino/img/Install_Arduino_IDE_6.png
+[2Kcopying images... [ 99%] Get_Started_with_Arduino/img/Install_Arduino_IDE_7.png
+[2Kcopying images... [100%] Get_Started_with_Arduino/img/Install_Arduino_IDE_8.png
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded, 10 warnings.
+
+The HTML pages are in ../../_readthedocs/html.
+
+[rtd-command-info] start-time: 2025-09-24T04:51:02.777230Z, end-time: 2025-09-24T04:51:03.950316Z, duration: 1, exit-code: 0
+python -m sphinx -T -b latex -d _build/doctrees -D language=en . $READTHEDOCS_OUTPUT/pdf
+Running Sphinx v7.2.5
+making output directory... done
+loading pickled environment... done
+myst v4.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=set(), disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_sort=True, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+building [mo]: targets for 0 po files that are out of date
+writing output... 
+building [latex]: all documents
+updating environment: 0 added, 0 changed, 0 removed
+reading sources... 
+looking for now-outdated files... none found
+copying TeX support files... copying TeX support files...
+done
+processing BasicStarterKitforArduinoUNOR4WiFi.tex... index Get_Started_with_Arduino/Get_Started_with_Arduino Get_Started_with_Arduino/Install_Arduino_IDE Get_Started_with_Arduino/Creating_Opening_Saving_Sketches Get_Started_with_Arduino/How_to_Upload_Sketch Get_Started_with_Arduino/Sketch_Writing_Rules Get_Started_with_Arduino/How_to_Build_the_Circuit Get_Started_with_Arduino/How_to_add_Libraries Download_the_Code/Download_the_Code Components_Kit/Components_Kit Components_Kit/component_UNO_R4 Components_Kit/component_breadboard Components_Kit/component_wires Components_Kit/component_resistor Components_Kit/component_led Components_Kit/component_rgb_led Components_Kit/component_transistor Components_Kit/component_buzzer Components_Kit/component_button Components_Kit/component_potentiometer Components_Kit/component_photoresistor Components_Kit/component_thermistor Components_Kit/component_tilt_switch Components_Kit/component_audio_speaker Components_Kit/component_relay Components_Kit/Components_joystick_module Components_Kit/component_pir Components_Kit/component_humiture_sensor Components_Kit/component_oled Basic_Project/Basic_Project Basic_Project/LED_Blink Basic_Project/Button_LED Basic_Project/RGB_LED Basic_Project/Active_Buzzer Basic_Project/Passive_Buzzer Basic_Project/Photoresistor Basic_Project/Thermistor Basic_Project/Potentiometer Basic_Project/DHT11_Module Basic_Project/Joystick_Module Basic_Project/2_Channel_Relay_Module Basic_Project/PIR_Motion_Sensor Basic_Project/Audio_Module_Speaker Basic_Project/0.96_inch_OLED Extension_Project/Extension_Project Extension_Project/12x8_LED_Matrix Extension_Project/WiFi_Connect_Test Extension_Project/Web_Control_LED Extension_Project/Web_Control_Relay Extension_Project/Digital_Dice_LED_Matrix Extension_Project/Greedy_Snake_Game Extension_Project/Ping-Pong_Game Extension_Project/Real-time_Weather_OLED 
+resolving references...
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/12x8_LED_Matrix.rst:194: WARNING: undefined label: 'fun_snake'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/WiFi_Connect_Test.rst:92: WARNING: undefined label: 'update_firmware'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Web_Control_LED.rst:74: WARNING: undefined label: 'update_firmware'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Ping-Pong_Game.rst:23: WARNING: undefined label: 'cpn_power'
+done
+writing... done
+[2Kcopying images... [  1%] Get_Started_with_Arduino/img/Install_Arduino_IDE_1.png
+[2Kcopying images... [  1%] Get_Started_with_Arduino/img/Install_Arduino_IDE_2.png
+[2Kcopying images... [  2%] Get_Started_with_Arduino/img/Install_Arduino_IDE_3.png
+[2Kcopying images... [  3%] Get_Started_with_Arduino/img/Install_Arduino_IDE_4.png
+[2Kcopying images... [  3%] Get_Started_with_Arduino/img/Install_Arduino_IDE_5.png
+[2Kcopying images... [  4%] Get_Started_with_Arduino/img/Install_Arduino_IDE_6.png
+[2Kcopying images... [  5%] Get_Started_with_Arduino/img/Install_Arduino_IDE_7.png
+[2Kcopying images... [  5%] Get_Started_with_Arduino/img/Install_Arduino_IDE_8.png
+[2Kcopying images... [  6%] Get_Started_with_Arduino/img/Creat_Skerch0.png
+[2Kcopying images... [  7%] Get_Started_with_Arduino/img/Creat_Skerch1.png
+[2Kcopying images... [  8%] Get_Started_with_Arduino/img/Creat_Skerch2.png
+[2Kcopying images... [  8%] Get_Started_with_Arduino/img/Creat_Skerch3.png
+[2Kcopying images... [  9%] Get_Started_with_Arduino/img/Creat_Skerch4.png
+[2Kcopying images... [ 10%] Get_Started_with_Arduino/img/Creat_Skerch5.png
+[2Kcopying images... [ 10%] Get_Started_with_Arduino/img/Upload_Sketch1.png
+[2Kcopying images... [ 11%] Get_Started_with_Arduino/img/Upload_Sketch2.png
+[2Kcopying images... [ 12%] Get_Started_with_Arduino/img/Upload_Sketch1-1.png
+[2Kcopying images... [ 12%] Get_Started_with_Arduino/img/Upload_Sketch1-2.png
+[2Kcopying images... [ 13%] Get_Started_with_Arduino/img/Upload_Sketch3.png
+[2Kcopying images... [ 14%] Get_Started_with_Arduino/img/Upload_Sketch4.png
+[2Kcopying images... [ 14%] Get_Started_with_Arduino/img/Upload_Sketch5.png
+[2Kcopying images... [ 15%] Get_Started_with_Arduino/img/Upload_Sketch6.png
+[2Kcopying images... [ 16%] Get_Started_with_Arduino/img/Upload_Sketch7.png
+[2Kcopying images... [ 16%] Get_Started_with_Arduino/img/Upload_Sketch8.png
+[2Kcopying images... [ 17%] Get_Started_with_Arduino/img/Bulid_Circuit1.png
+[2Kcopying images... [ 18%] Get_Started_with_Arduino/img/Bulid_Circuit2.png
+[2Kcopying images... [ 18%] Get_Started_with_Arduino/img/Bulid_Circuit3.png
+[2Kcopying images... [ 19%] Get_Started_with_Arduino/img/Bulid_Circuit4.png
+[2Kcopying images... [ 20%] Get_Started_with_Arduino/img/Bulid_Circuit4-4.png
+[2Kcopying images... [ 21%] Get_Started_with_Arduino/img/Bulid_Circuit5.png
+[2Kcopying images... [ 21%] Get_Started_with_Arduino/img/Bulid_Circuit6.png
+[2Kcopying images... [ 22%] Get_Started_with_Arduino/img/Bulid_Circuit7.png
+[2Kcopying images... [ 23%] Get_Started_with_Arduino/img/Bulid_Circuit8.png
+[2Kcopying images... [ 23%] Get_Started_with_Arduino/img/Library1.png
+[2Kcopying images... [ 24%] Get_Started_with_Arduino/img/Library2.png
+[2Kcopying images... [ 25%] Get_Started_with_Arduino/img/Library3.png
+[2Kcopying images... [ 25%] Get_Started_with_Arduino/img/Library4.png
+[2Kcopying images... [ 26%] Get_Started_with_Arduino/img/Library5.png
+[2Kcopying images... [ 27%] Get_Started_with_Arduino/img/Library6.png
+[2Kcopying images... [ 27%] Components_Kit/img/list.jpg
+[2Kcopying images... [ 28%] Components_Kit/img/unor4.jpg
+[2Kcopying images... [ 29%] Components_Kit/img/unor4_wifi_pinout.png
+[2Kcopying images... [ 29%] Components_Kit/img/breadboard.png
+[2Kcopying images... [ 30%] Components_Kit/img/breadboard_internal.png
+[2Kcopying images... [ 31%] Components_Kit/img/breadboard_internal1.png
+[2Kcopying images... [ 32%] Components_Kit/img/Jumper_Wires.png
+[2Kcopying images... [ 32%] Components_Kit/img/resistor.png
+[2Kcopying images... [ 33%] Components_Kit/img/resistor_symbol.png
+[2Kcopying images... [ 34%] Components_Kit/img/resistance_card.jpg
+[2Kcopying images... [ 34%] Components_Kit/img/220ohm.jpg
+[2Kcopying images... [ 35%] Components_Kit/img/LED.png
+[2Kcopying images... [ 36%] Components_Kit/img/led_symbol.png
+[2Kcopying images... [ 36%] Components_Kit/img/rgb_led.png
+[2Kcopying images... [ 37%] Components_Kit/img/rgb_light.png
+[2Kcopying images... [ 38%] Components_Kit/img/rgb_symbol.png
+[2Kcopying images... [ 38%] Components_Kit/img/rgb_pin.jpg
+[2Kcopying images... [ 39%] Components_Kit/img/npn_pnp.png
+[2Kcopying images... [ 40%] Components_Kit/img/transistor_symbol.png
+[2Kcopying images... [ 40%] Components_Kit/img/ebc.png
+[2Kcopying images... [ 41%] Components_Kit/img/buzzer2.png
+[2Kcopying images... [ 42%] Components_Kit/img/buzzer1.png
+[2Kcopying images... [ 42%] Components_Kit/img/buzzer_symbol.png
+[2Kcopying images... [ 43%] Components_Kit/img/button.png
+[2Kcopying images... [ 44%] Components_Kit/img/button_symbol.png
+[2Kcopying images... [ 45%] Components_Kit/img/button3.png
+[2Kcopying images... [ 45%] Components_Kit/img/potentiometer.png
+[2Kcopying images... [ 46%] Components_Kit/img/potentiometer_symbol.png
+[2Kcopying images... [ 47%] Components_Kit/img/photoresistor.png
+[2Kcopying images... [ 47%] Components_Kit/img/photoresistor_symbol.png
+[2Kcopying images... [ 48%] Components_Kit/img/thermistor.png
+[2Kcopying images... [ 49%] Components_Kit/img/thermistor_symbol.png
+[2Kcopying images... [ 49%] Components_Kit/img/tilt_switch.png
+[2Kcopying images... [ 50%] Components_Kit/img/tilt_symbol.png
+[2Kcopying images... [ 51%] Components_Kit/img/speaker_pic.png
+[2Kcopying images... [ 51%] Components_Kit/img/2030_speaker.png
+[2Kcopying images... [ 52%] Components_Kit/img/audio_module.jpg
+[2Kcopying images... [ 53%] Components_Kit/img/relay_1.png
+[2Kcopying images... [ 53%] Components_Kit/img/relay_2.png
+[2Kcopying images... [ 54%] Components_Kit/img/relay_3.png
+[2Kcopying images... [ 55%] Components_Kit/img/relay_4.png
+[2Kcopying images... [ 55%] Components_Kit/img/joystick_pic.png
+[2Kcopying images... [ 56%] Components_Kit/img/joystick318.png
+[2Kcopying images... [ 57%] Components_Kit/img/PIR1.png
+[2Kcopying images... [ 58%] Components_Kit/img/PIR2.png
+[2Kcopying images... [ 58%] Components_Kit/img/PIR3.png
+[2Kcopying images... [ 59%] Components_Kit/img/dht11_pic.png
+[2Kcopying images... [ 60%] Components_Kit/img/oled.png
+[2Kcopying images... [ 60%] Basic_Project/img/Led_Blink_Wiring.png
+[2Kcopying images... [ 61%] Basic_Project/img/Led_Blink_Wiring1.png
+[2Kcopying images... [ 62%] Basic_Project/img/Button_LED_Wiring.png
+[2Kcopying images... [ 62%] Basic_Project/img/RGB_LED_PWM.png
+[2Kcopying images... [ 63%] Basic_Project/img/RGB_LED_Wiring.png
+[2Kcopying images... [ 64%] Basic_Project/img/RGB_LED_Wiring1.png
+[2Kcopying images... [ 64%] Basic_Project/img/RGB_LED_Code.png
+[2Kcopying images... [ 65%] Basic_Project/img/RGB_LED_Code1.png
+[2Kcopying images... [ 66%] Basic_Project/img/Active_Buzzer.png
+[2Kcopying images... [ 66%] Basic_Project/img/Active_Buzzer_Wiring.png
+[2Kcopying images... [ 67%] Basic_Project/img/Active_Buzzer_Wiring1.png
+[2Kcopying images... [ 68%] Basic_Project/img/Passive_Buzzer_Wiring.png
+[2Kcopying images... [ 68%] Basic_Project/img/Passive_Buzzer_Wiring1.png
+[2Kcopying images... [ 69%] Basic_Project/img/Passive_Buzzer_Code.png
+[2Kcopying images... [ 70%] Basic_Project/img/Photoresistor_Wiring.png
+[2Kcopying images... [ 71%] Basic_Project/img/Photoresistor_Wiring1.png
+[2Kcopying images... [ 71%] Basic_Project/img/Thermistor_Wiring.png
+[2Kcopying images... [ 72%] Basic_Project/img/Thermistor_Wiring1.png
+[2Kcopying images... [ 73%] Basic_Project/img/Potentiometer_Wiring.png
+[2Kcopying images... [ 73%] Basic_Project/img/Potentiometer_Wiring1.png
+[2Kcopying images... [ 74%] Basic_Project/img/DHT11_Module_Wiring.png
+[2Kcopying images... [ 75%] Basic_Project/img/DHT11_Module_Wiring1.png
+[2Kcopying images... [ 75%] Basic_Project/img/Joystick_Wiring.png
+[2Kcopying images... [ 76%] Basic_Project/img/Joystick_Wiring1.png
+[2Kcopying images... [ 77%] Basic_Project/img/Realy_Wiring.png
+[2Kcopying images... [ 77%] Basic_Project/img/PIR_Wiring.png
+[2Kcopying images... [ 78%] Basic_Project/img/PIR_Wiring1.png
+[2Kcopying images... [ 79%] Basic_Project/img/Audio_Speaker_Wiring.png
+[2Kcopying images... [ 79%] Basic_Project/img/Audio_Speaker_Wiring1.png
+[2Kcopying images... [ 80%] Basic_Project/img/Audio_Speaker_Code.png
+[2Kcopying images... [ 81%] Basic_Project/img/0.96_inch_OLED_Wiring.png
+[2Kcopying images... [ 82%] Basic_Project/img/0.96_inch_OLED_Wiring1.png
+[2Kcopying images... [ 82%] Extension_Project/img/LED_Matrix.png
+[2Kcopying images... [ 83%] Extension_Project/img/LED_Matrix_editor.png
+[2Kcopying images... [ 84%] Extension_Project/img/LED_Matrix_editor1.png
+[2Kcopying images... [ 84%] Extension_Project/img/LED_Matrix_editor2.png
+[2Kcopying images... [ 85%] Extension_Project/img/LED_Matrix_editor3.png
+[2Kcopying images... [ 86%] Extension_Project/img/LED_Matrix_editor4.png
+[2Kcopying images... [ 86%] Extension_Project/img/LED_Matrix_editor5.png
+[2Kcopying images... [ 87%] Extension_Project/img/LED_Matrix_code.png
+[2Kcopying images... [ 88%] Extension_Project/img/WiFi_Connect_Test.png
+[2Kcopying images... [ 88%] Extension_Project/img/Web_Control_LED.png
+[2Kcopying images... [ 89%] Extension_Project/img/Web_Control_Realy.png
+[2Kcopying images... [ 90%] Extension_Project/img/Web_Control_Realy_Wiring.png
+[2Kcopying images... [ 90%] Extension_Project/img/Web_Control_Realy_Code.png
+[2Kcopying images... [ 91%] Extension_Project/img/Web_Control_Realy_Code1.png
+[2Kcopying images... [ 92%] Extension_Project/img/Digital_Dice_LED_Matrix_Wiring.png
+[2Kcopying images... [ 92%] Extension_Project/img/Greedy_Snake_Game_Wiring.png
+[2Kcopying images... [ 93%] Extension_Project/img/Greedy_Snake_Game_Wiring1.png
+[2Kcopying images... [ 94%] Extension_Project/img/Ping_Pong_Game_Wiring.png
+[2Kcopying images... [ 95%] Extension_Project/img/Ping_Pong_Game_Wiring1.png
+[2Kcopying images... [ 95%] Extension_Project/img/Real_time_Weather_OLED_Wiring.png
+[2Kcopying images... [ 96%] Extension_Project/img/Real_time_Weather_OLED_Wiring1.png
+[2Kcopying images... [ 97%] Extension_Project/img/Real_time_Weather_OLED_Code.png
+[2Kcopying images... [ 97%] Extension_Project/img/Real_time_Weather_OLED_Code1.png
+[2Kcopying images... [ 98%] Extension_Project/img/Real_time_Weather_OLED_Code2.png
+[2Kcopying images... [ 99%] Extension_Project/img/Real_time_Weather_OLED_Code3.png
+[2Kcopying images... [ 99%] Extension_Project/img/Real_time_Weather_OLED_Code4.png
+[2Kcopying images... [100%] Extension_Project/img/Real_time_Weather_OLED_Code5.png
+build succeeded, 4 warnings.
+
+The LaTeX files are in ../../_readthedocs/pdf.
+Run 'make' in that directory to run these through (pdf)latex
+(use `make latexpdf' here to do that automatically).
+
+[rtd-command-info] start-time: 2025-09-24T04:51:16.860834Z, end-time: 2025-09-24T04:51:16.904356Z, duration: 0, exit-code: 0
+cat latexmkrc
+$latex = 'latex ' . $ENV{'LATEXOPTS'} . ' %O %S';
+$pdflatex = 'pdflatex ' . $ENV{'LATEXOPTS'} . ' %O %S';
+$lualatex = 'lualatex ' . $ENV{'LATEXOPTS'} . ' %O %S';
+$xelatex = 'xelatex --no-pdf ' . $ENV{'LATEXOPTS'} . ' %O %S';
+$makeindex = 'makeindex -s python.ist %O -o %D %S';
+add_cus_dep( "glo", "gls", 0, "makeglo" );
+sub makeglo {
+ return system( "makeindex -s gglo.ist -o '$_[0].gls' '$_[0].glo'" );
+}
+
+[rtd-command-info] start-time: 2025-09-24T04:51:16.940822Z, end-time: 2025-09-24T04:51:20.030531Z, duration: 3, exit-code: 12
+latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=basic-starter-kit-for-arduino-uno-r4-wifi-doc -interaction=nonstopmode
+Use of uninitialized value in concatenation (.) or string at (eval 10) line 1.
+Use of uninitialized value in concatenation (.) or string at (eval 10) line 2.
+Use of uninitialized value in concatenation (.) or string at (eval 10) line 3.
+Use of uninitialized value in concatenation (.) or string at (eval 10) line 4.
+Subroutine makeglo redefined at (eval 11) line 7.
+Use of uninitialized value in concatenation (.) or string at (eval 11) line 1.
+Use of uninitialized value in concatenation (.) or string at (eval 11) line 2.
+Use of uninitialized value in concatenation (.) or string at (eval 11) line 3.
+Use of uninitialized value in concatenation (.) or string at (eval 11) line 4.
+Rc files read:
+  /etc/LatexMk
+  latexmkrc
+  latexmkrc
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'BasicStarterKitforArduinoUNOR4WiFi.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+Latexmk: applying rule 'pdflatex'...
+------------
+Running 'pdflatex   -interaction=nonstopmode -recorder --jobname="basic-starter-kit-for-arduino-uno-r4-wifi-doc"  "BasicStarterKitforArduinoUNOR4WiFi.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./BasicStarterKitforArduinoUNOR4WiFi.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (./sphinxmanual.cls
+Document Class: sphinxmanual 2019/12/01 v2.3.0 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf))
+(/usr/share/texmf/tex/latex/tex-gyre/tgtermes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)))
+(/usr/share/texmf/tex/latex/tex-gyre/tgheros.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(./sphinxoptionshyperref.sty) (./sphinxoptionsgeometry.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(./sphinxlatexgraphics.sty) (./sphinxpackageboxes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ellipse/ellipse.sty))
+(./sphinxlatexadmonitions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty))
+(./sphinxlatexliterals.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty))
+(./sphinxlatexshadowbox.sty) (./sphinxlatexcontainers.sty)
+(./sphinxhighlight.sty) (./sphinxlatextables.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty))
+(./sphinxlatexnumfig.sty) (./sphinxlatexlists.sty) (./sphinxpackagefootnote.sty
+) (./sphinxlatexindbibtoc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty))
+(./sphinxlatexstylepage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip-2001-04-09.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./sphinxlatexstyleheadings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty))
+(./sphinxlatexstyletext.sty) (./sphinxlatexobjects.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty)
+(./sphinxmessages.sty)
+Writing index file basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx
+(/usr/share/texmf/tex/latex/tex-gyre/t1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.aux)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))<
+<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}] [2]
+(/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd) [1] [2]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
+[3] [4]
+Chapter 1.
+(/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd)pdfTeX warning (ext4
+): destination with the same identifier (name{page.1}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.152 \end{enumerate}
+                      [1]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.180 \noindent
+               \sphinxincludegraphics{{Install_Arduino_IDE_3}.png} [2 <./Instal
+l_Arduino_IDE_1.png> <./Install_Arduino_IDE_2.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <./Install_Arduino_IDE_3.png> <./Install_Arduino_IDE_4.png>]libpng error: Not a PNG file
+
+!pdfTeX error: pdflatex (file ./Install_Arduino_IDE_6.png): libpng: internal er
+ror
+ ==> Fatal error occurred, no output PDF file produced!
+Latexmk: Index file 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx' was written
+Rule 'makeindex basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx'
+------------
+Run number 1 of rule 'makeindex basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx'
+------------
+------------
+Running 'makeindex -s python.ist  -o "basic-starter-kit-for-arduino-uno-r4-wifi-doc.ind" "basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx"'
+------------
+Latexmk: Examining 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: applying rule 'makeindex basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx'...
+This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
+Scanning style file ./python.ist.......done (7 attributes redefined, 0 ignored).
+Scanning input file basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx...done (0 entries accepted, 0 rejected).
+Nothing written in basic-starter-kit-for-arduino-uno-r4-wifi-doc.ind.
+Transcript written in basic-starter-kit-for-arduino-uno-r4-wifi-doc.ilg.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'basic-starter-kit-for-arduino-uno-r4-wifi-doc.aux'
+      'basic-starter-kit-for-arduino-uno-r4-wifi-doc.ind'
+      'basic-starter-kit-for-arduino-uno-r4-wifi-doc.toc'
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex   -interaction=nonstopmode -recorder --jobname="basic-starter-kit-for-arduino-uno-r4-wifi-doc"  "BasicStarterKitforArduinoUNOR4WiFi.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./BasicStarterKitforArduinoUNOR4WiFi.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (./sphinxmanual.cls
+Document Class: sphinxmanual 2019/12/01 v2.3.0 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf))
+(/usr/share/texmf/tex/latex/tex-gyre/tgtermes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)))
+(/usr/share/texmf/tex/latex/tex-gyre/tgheros.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(./sphinxoptionshyperref.sty) (./sphinxoptionsgeometry.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(./sphinxlatexgraphics.sty) (./sphinxpackageboxes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ellipse/ellipse.sty))
+(./sphinxlatexadmonitions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty))
+(./sphinxlatexliterals.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty))
+(./sphinxlatexshadowbox.sty) (./sphinxlatexcontainers.sty)
+(./sphinxhighlight.sty) (./sphinxlatextables.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty))
+(./sphinxlatexnumfig.sty) (./sphinxlatexlists.sty) (./sphinxpackagefootnote.sty
+) (./sphinxlatexindbibtoc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty))
+(./sphinxlatexstylepage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip-2001-04-09.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./sphinxlatexstyleheadings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty))
+(./sphinxlatexstyletext.sty) (./sphinxlatexobjects.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty)
+(./sphinxmessages.sty)
+Writing index file basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx
+(/usr/share/texmf/tex/latex/tex-gyre/t1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.aux)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.out)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.out)<<ot1.cmap>><<oml.cmap>><<
+oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}] [2]
+(/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.toc) [1] [2]
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.toc) [3] [4]
+Chapter 1.
+(/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd)pdfTeX warning (ext4
+): destination with the same identifier (name{page.1}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.152 \end{enumerate}
+                      [1]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.180 \noindent
+               \sphinxincludegraphics{{Install_Arduino_IDE_3}.png} [2 <./Instal
+l_Arduino_IDE_1.png> <./Install_Arduino_IDE_2.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <./Install_Arduino_IDE_3.png> <./Install_Arduino_IDE_4.png>]libpng error: Not a PNG file
+
+!pdfTeX error: pdflatex (file ./Install_Arduino_IDE_6.png): libpng: internal er
+ror
+ ==> Fatal error occurred, no output PDF file produced!
+Latexmk: Index file 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx' was written
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'basic-starter-kit-for-arduino-uno-r4-wifi-doc.out'
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex   -interaction=nonstopmode -recorder --jobname="basic-starter-kit-for-arduino-uno-r4-wifi-doc"  "BasicStarterKitforArduinoUNOR4WiFi.tex"'
+------------
+Latexmk: Examining 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./BasicStarterKitforArduinoUNOR4WiFi.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (./sphinxmanual.cls
+Document Class: sphinxmanual 2019/12/01 v2.3.0 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf))
+(/usr/share/texmf/tex/latex/tex-gyre/tgtermes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)))
+(/usr/share/texmf/tex/latex/tex-gyre/tgheros.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty) (./sphinx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(./sphinxoptionshyperref.sty) (./sphinxoptionsgeometry.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(./sphinxlatexgraphics.sty) (./sphinxpackageboxes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/pict2e.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ellipse/ellipse.sty))
+(./sphinxlatexadmonitions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty))
+(./sphinxlatexliterals.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty))
+(./sphinxlatexshadowbox.sty) (./sphinxlatexcontainers.sty)
+(./sphinxhighlight.sty) (./sphinxlatextables.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty))
+(./sphinxlatexnumfig.sty) (./sphinxlatexlists.sty) (./sphinxpackagefootnote.sty
+) (./sphinxlatexindbibtoc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty))
+(./sphinxlatexstylepage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip-2001-04-09.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./sphinxlatexstyleheadings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty))
+(./sphinxlatexstyletext.sty) (./sphinxlatexobjects.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty)
+(./sphinxmessages.sty)
+Writing index file basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx
+(/usr/share/texmf/tex/latex/tex-gyre/t1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.aux)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.out)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.out)<<ot1.cmap>><<oml.cmap>><<
+oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}] [2]
+(/usr/share/texmf/tex/latex/tex-gyre/t1qhv.fd)
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.toc) [1] [2]
+(./basic-starter-kit-for-arduino-uno-r4-wifi-doc.toc) [3] [4]
+Chapter 1.
+(/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd)pdfTeX warning (ext4
+): destination with the same identifier (name{page.1}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.152 \end{enumerate}
+                      [1]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.180 \noindent
+               \sphinxincludegraphics{{Install_Arduino_IDE_3}.png} [2 <./Instal
+l_Arduino_IDE_1.png> <./Install_Arduino_IDE_2.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <./Install_Arduino_IDE_3.png> <./Install_Arduino_IDE_4.png>]libpng error: Not a PNG file
+
+!pdfTeX error: pdflatex (file ./Install_Arduino_IDE_6.png): libpng: internal er
+ror
+ ==> Fatal error occurred, no output PDF file produced!
+Latexmk: Index file 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.idx' was written
+Failure to make 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.pdf'
+Collected error summary (may duplicate other messages):
+  pdflatex: Command for 'pdflatex' gave return code 1
+      Refer to 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.log' for details
+Latexmk: Examining 'basic-starter-kit-for-arduino-uno-r4-wifi-doc.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Errors, in force_mode: so I tried finishing targets
+
+[rtd-command-info] start-time: 2025-09-24T04:51:20.073226Z, end-time: 2025-09-24T04:51:21.985451Z, duration: 1, exit-code: 0
+python -m sphinx -T -b epub -d _build/doctrees -D language=en . $READTHEDOCS_OUTPUT/epub
+Running Sphinx v7.2.5
+making output directory... done
+loading pickled environment... done
+WARNING: conf value "version" should not be empty for EPUB3
+myst v4.0.1: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=set(), disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_sort=True, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+building [mo]: targets for 0 po files that are out of date
+writing output... 
+building [epub]: targets for 53 source files that are out of date
+updating environment: 0 added, 0 changed, 0 removed
+reading sources... 
+looking for now-outdated files... none found
+preparing documents... done
+copying assets... copying static files... done
+copying extra files... done
+done
+[2Kwriting output... [  2%] Basic_Project/0.96_inch_OLED
+[2Kwriting output... [  4%] Basic_Project/2_Channel_Relay_Module
+[2Kwriting output... [  6%] Basic_Project/Active_Buzzer
+[2Kwriting output... [  8%] Basic_Project/Audio_Module_Speaker
+[2Kwriting output... [  9%] Basic_Project/Basic_Project
+[2Kwriting output... [ 11%] Basic_Project/Button_LED
+[2Kwriting output... [ 13%] Basic_Project/DHT11_Module
+[2Kwriting output... [ 15%] Basic_Project/Joystick_Module
+[2Kwriting output... [ 17%] Basic_Project/LED_Blink
+[2Kwriting output... [ 19%] Basic_Project/PIR_Motion_Sensor
+[2Kwriting output... [ 21%] Basic_Project/Passive_Buzzer
+[2Kwriting output... [ 23%] Basic_Project/Photoresistor
+[2Kwriting output... [ 25%] Basic_Project/Potentiometer
+[2Kwriting output... [ 26%] Basic_Project/RGB_LED
+[2Kwriting output... [ 28%] Basic_Project/Thermistor
+[2Kwriting output... [ 30%] Components_Kit/Components_Kit
+[2Kwriting output... [ 32%] Components_Kit/Components_joystick_module
+[2Kwriting output... [ 34%] Components_Kit/component_UNO_R4
+[2Kwriting output... [ 36%] Components_Kit/component_audio_speaker
+[2Kwriting output... [ 38%] Components_Kit/component_breadboard
+[2Kwriting output... [ 40%] Components_Kit/component_button
+[2Kwriting output... [ 42%] Components_Kit/component_buzzer
+[2Kwriting output... [ 43%] Components_Kit/component_humiture_sensor
+[2Kwriting output... [ 45%] Components_Kit/component_led
+[2Kwriting output... [ 47%] Components_Kit/component_oled
+[2Kwriting output... [ 49%] Components_Kit/component_photoresistor
+[2Kwriting output... [ 51%] Components_Kit/component_pir
+[2Kwriting output... [ 53%] Components_Kit/component_potentiometer
+[2Kwriting output... [ 55%] Components_Kit/component_relay
+[2Kwriting output... [ 57%] Components_Kit/component_resistor
+[2Kwriting output... [ 58%] Components_Kit/component_rgb_led
+[2Kwriting output... [ 60%] Components_Kit/component_thermistor
+[2Kwriting output... [ 62%] Components_Kit/component_tilt_switch
+[2Kwriting output... [ 64%] Components_Kit/component_transistor
+[2Kwriting output... [ 66%] Components_Kit/component_wires
+[2Kwriting output... [ 68%] Download_the_Code/Download_the_Code
+[2Kwriting output... [ 70%] Extension_Project/12x8_LED_Matrix
+[2Kwriting output... [ 72%] Extension_Project/Digital_Dice_LED_Matrix
+[2Kwriting output... [ 74%] Extension_Project/Extension_Project
+[2Kwriting output... [ 75%] Extension_Project/Greedy_Snake_Game
+[2Kwriting output... [ 77%] Extension_Project/Ping-Pong_Game
+[2Kwriting output... [ 79%] Extension_Project/Real-time_Weather_OLED
+[2Kwriting output... [ 81%] Extension_Project/Web_Control_LED
+[2Kwriting output... [ 83%] Extension_Project/Web_Control_Relay
+[2Kwriting output... [ 85%] Extension_Project/WiFi_Connect_Test
+[2Kwriting output... [ 87%] Get_Started_with_Arduino/Creating_Opening_Saving_Sketches
+[2Kwriting output... [ 89%] Get_Started_with_Arduino/Get_Started_with_Arduino
+[2Kwriting output... [ 91%] Get_Started_with_Arduino/How_to_Build_the_Circuit
+[2Kwriting output... [ 92%] Get_Started_with_Arduino/How_to_Upload_Sketch
+[2Kwriting output... [ 94%] Get_Started_with_Arduino/How_to_add_Libraries
+[2Kwriting output... [ 96%] Get_Started_with_Arduino/Install_Arduino_IDE
+[2Kwriting output... [ 98%] Get_Started_with_Arduino/Sketch_Writing_Rules
+[2Kwriting output... [100%] index
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/12x8_LED_Matrix.rst:194: WARNING: undefined label: 'fun_snake'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Ping-Pong_Game.rst:23: WARNING: undefined label: 'cpn_power'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/Web_Control_LED.rst:74: WARNING: undefined label: 'update_firmware'
+/home/docs/checkouts/readthedocs.org/user_builds/basic-starter-kit-for-arduino-uno-r4-wifi-doc/checkouts/latest/docs/source/Extension_Project/WiFi_Connect_Test.rst:92: WARNING: undefined label: 'update_firmware'
+generating indices... genindex done
+writing additional pages... done
+[2Kcopying images... [  1%] Basic_Project/img/0.96_inch_OLED_Wiring.png
+[2Kcopying images... [  1%] Basic_Project/img/0.96_inch_OLED_Wiring1.png
+[2Kcopying images... [  2%] Basic_Project/img/Realy_Wiring.png
+[2Kcopying images... [  3%] Basic_Project/img/Active_Buzzer.png
+[2Kcopying images... [  3%] Basic_Project/img/Active_Buzzer_Wiring.png
+[2Kcopying images... [  4%] Basic_Project/img/Active_Buzzer_Wiring1.png
+[2Kcopying images... [  5%] Basic_Project/img/Audio_Speaker_Wiring.png
+[2Kcopying images... [  5%] Basic_Project/img/Audio_Speaker_Wiring1.png
+[2Kcopying images... [  6%] Basic_Project/img/Audio_Speaker_Code.png
+[2Kcopying images... [  7%] Basic_Project/img/Button_LED_Wiring.png
+[2Kcopying images... [  8%] Basic_Project/img/DHT11_Module_Wiring.png
+[2Kcopying images... [  8%] Basic_Project/img/DHT11_Module_Wiring1.png
+[2Kcopying images... [  9%] Basic_Project/img/Joystick_Wiring.png
+[2Kcopying images... [ 10%] Basic_Project/img/Joystick_Wiring1.png
+[2Kcopying images... [ 10%] Basic_Project/img/Led_Blink_Wiring.png
+[2Kcopying images... [ 11%] Basic_Project/img/Led_Blink_Wiring1.png
+[2Kcopying images... [ 12%] Basic_Project/img/PIR_Wiring.png
+[2Kcopying images... [ 12%] Basic_Project/img/PIR_Wiring1.png
+[2Kcopying images... [ 13%] Basic_Project/img/Passive_Buzzer_Wiring.png
+[2Kcopying images... [ 14%] Basic_Project/img/Passive_Buzzer_Wiring1.png
+[2Kcopying images... [ 14%] Basic_Project/img/Passive_Buzzer_Code.png
+[2Kcopying images... [ 15%] Basic_Project/img/Photoresistor_Wiring.png
+[2Kcopying images... [ 16%] Basic_Project/img/Photoresistor_Wiring1.png
+[2Kcopying images... [ 16%] Basic_Project/img/Potentiometer_Wiring.png
+[2Kcopying images... [ 17%] Basic_Project/img/Potentiometer_Wiring1.png
+[2Kcopying images... [ 18%] Basic_Project/img/RGB_LED_PWM.png
+[2Kcopying images... [ 18%] Basic_Project/img/RGB_LED_Wiring.png
+[2Kcopying images... [ 19%] Basic_Project/img/RGB_LED_Wiring1.png
+[2Kcopying images... [ 20%] Basic_Project/img/RGB_LED_Code.png
+[2Kcopying images... [ 21%] Basic_Project/img/RGB_LED_Code1.png
+[2Kcopying images... [ 21%] Basic_Project/img/Thermistor_Wiring.png
+[2Kcopying images... [ 22%] Basic_Project/img/Thermistor_Wiring1.png
+[2Kcopying images... [ 23%] Components_Kit/img/list.jpg
+[2Kcopying images... [ 23%] Components_Kit/img/joystick_pic.png
+[2Kcopying images... [ 24%] Components_Kit/img/joystick318.png
+[2Kcopying images... [ 25%] Components_Kit/img/unor4.jpg
+[2Kcopying images... [ 25%] Components_Kit/img/unor4_wifi_pinout.png
+[2Kcopying images... [ 26%] Components_Kit/img/speaker_pic.png
+[2Kcopying images... [ 27%] Components_Kit/img/2030_speaker.png
+[2Kcopying images... [ 27%] Components_Kit/img/audio_module.jpg
+[2Kcopying images... [ 28%] Components_Kit/img/breadboard.png
+[2Kcopying images... [ 29%] Components_Kit/img/breadboard_internal.png
+[2Kcopying images... [ 29%] Components_Kit/img/breadboard_internal1.png
+[2Kcopying images... [ 30%] Components_Kit/img/button.png
+[2Kcopying images... [ 31%] Components_Kit/img/button_symbol.png
+[2Kcopying images... [ 32%] Components_Kit/img/button3.png
+[2Kcopying images... [ 32%] Components_Kit/img/buzzer2.png
+[2Kcopying images... [ 33%] Components_Kit/img/buzzer1.png
+[2Kcopying images... [ 34%] Components_Kit/img/buzzer_symbol.png
+[2Kcopying images... [ 34%] Components_Kit/img/dht11_pic.png
+[2Kcopying images... [ 35%] Components_Kit/img/LED.png
+[2Kcopying images... [ 36%] Components_Kit/img/led_symbol.png
+[2Kcopying images... [ 36%] Components_Kit/img/oled.png
+[2Kcopying images... [ 37%] Components_Kit/img/photoresistor.png
+[2Kcopying images... [ 38%] Components_Kit/img/photoresistor_symbol.png
+[2Kcopying images... [ 38%] Components_Kit/img/PIR1.png
+[2Kcopying images... [ 39%] Components_Kit/img/PIR2.png
+[2Kcopying images... [ 40%] Components_Kit/img/PIR3.png
+[2Kcopying images... [ 40%] Components_Kit/img/potentiometer.png
+[2Kcopying images... [ 41%] Components_Kit/img/potentiometer_symbol.png
+[2Kcopying images... [ 42%] Components_Kit/img/relay_1.png
+[2Kcopying images... [ 42%] Components_Kit/img/relay_2.png
+[2Kcopying images... [ 43%] Components_Kit/img/relay_3.png
+[2Kcopying images... [ 44%] Components_Kit/img/relay_4.png
+[2Kcopying images... [ 45%] Components_Kit/img/resistor.png
+[2Kcopying images... [ 45%] Components_Kit/img/resistor_symbol.png
+[2Kcopying images... [ 46%] Components_Kit/img/resistance_card.jpg
+[2Kcopying images... [ 47%] Components_Kit/img/220ohm.jpg
+[2Kcopying images... [ 47%] Components_Kit/img/rgb_led.png
+[2Kcopying images... [ 48%] Components_Kit/img/rgb_light.png
+[2Kcopying images... [ 49%] Components_Kit/img/rgb_symbol.png
+[2Kcopying images... [ 49%] Components_Kit/img/rgb_pin.jpg
+[2Kcopying images... [ 50%] Components_Kit/img/thermistor.png
+[2Kcopying images... [ 51%] Components_Kit/img/thermistor_symbol.png
+[2Kcopying images... [ 51%] Components_Kit/img/tilt_switch.png
+[2Kcopying images... [ 52%] Components_Kit/img/tilt_symbol.png
+[2Kcopying images... [ 53%] Components_Kit/img/npn_pnp.png
+[2Kcopying images... [ 53%] Components_Kit/img/transistor_symbol.png
+[2Kcopying images... [ 54%] Components_Kit/img/ebc.png
+[2Kcopying images... [ 55%] Components_Kit/img/Jumper_Wires.png
+[2Kcopying images... [ 55%] Extension_Project/img/LED_Matrix.png
+[2Kcopying images... [ 56%] Extension_Project/img/LED_Matrix_editor.png
+[2Kcopying images... [ 57%] Extension_Project/img/LED_Matrix_editor1.png
+[2Kcopying images... [ 58%] Extension_Project/img/LED_Matrix_editor2.png
+[2Kcopying images... [ 58%] Extension_Project/img/LED_Matrix_editor3.png
+[2Kcopying images... [ 59%] Extension_Project/img/LED_Matrix_editor4.png
+[2Kcopying images... [ 60%] Extension_Project/img/LED_Matrix_editor5.png
+[2Kcopying images... [ 60%] Extension_Project/img/LED_Matrix_code.png
+[2Kcopying images... [ 61%] Extension_Project/img/Digital_Dice_LED_Matrix_Wiring.png
+[2Kcopying images... [ 62%] Extension_Project/img/Greedy_Snake_Game_Wiring.png
+[2Kcopying images... [ 62%] Extension_Project/img/Greedy_Snake_Game_Wiring1.png
+[2Kcopying images... [ 63%] Extension_Project/img/Ping_Pong_Game_Wiring.png
+[2Kcopying images... [ 64%] Extension_Project/img/Ping_Pong_Game_Wiring1.png
+[2Kcopying images... [ 64%] Extension_Project/img/Real_time_Weather_OLED_Wiring.png
+[2Kcopying images... [ 65%] Extension_Project/img/Real_time_Weather_OLED_Wiring1.png
+[2Kcopying images... [ 66%] Extension_Project/img/Real_time_Weather_OLED_Code.png
+[2Kcopying images... [ 66%] Extension_Project/img/Real_time_Weather_OLED_Code1.png
+[2Kcopying images... [ 67%] Extension_Project/img/Real_time_Weather_OLED_Code2.png
+[2Kcopying images... [ 68%] Extension_Project/img/Real_time_Weather_OLED_Code3.png
+[2Kcopying images... [ 68%] Extension_Project/img/Real_time_Weather_OLED_Code4.png
+[2Kcopying images... [ 69%] Extension_Project/img/Real_time_Weather_OLED_Code5.png
+[2Kcopying images... [ 70%] Extension_Project/img/Web_Control_LED.png
+[2Kcopying images... [ 71%] Extension_Project/img/Web_Control_Realy.png
+[2Kcopying images... [ 71%] Extension_Project/img/Web_Control_Realy_Wiring.png
+[2Kcopying images... [ 72%] Extension_Project/img/Web_Control_Realy_Code.png
+[2Kcopying images... [ 73%] Extension_Project/img/Web_Control_Realy_Code1.png
+[2Kcopying images... [ 73%] Extension_Project/img/WiFi_Connect_Test.png
+[2Kcopying images... [ 74%] Get_Started_with_Arduino/img/Creat_Skerch0.png
+[2Kcopying images... [ 75%] Get_Started_with_Arduino/img/Creat_Skerch1.png
+[2Kcopying images... [ 75%] Get_Started_with_Arduino/img/Creat_Skerch2.png
+[2Kcopying images... [ 76%] Get_Started_with_Arduino/img/Creat_Skerch3.png
+[2Kcopying images... [ 77%] Get_Started_with_Arduino/img/Creat_Skerch4.png
+[2Kcopying images... [ 77%] Get_Started_with_Arduino/img/Creat_Skerch5.png
+[2Kcopying images... [ 78%] Get_Started_with_Arduino/img/Bulid_Circuit1.png
+[2Kcopying images... [ 79%] Get_Started_with_Arduino/img/Bulid_Circuit2.png
+[2Kcopying images... [ 79%] Get_Started_with_Arduino/img/Bulid_Circuit3.png
+[2Kcopying images... [ 80%] Get_Started_with_Arduino/img/Bulid_Circuit4.png
+[2Kcopying images... [ 81%] Get_Started_with_Arduino/img/Bulid_Circuit4-4.png
+[2Kcopying images... [ 82%] Get_Started_with_Arduino/img/Bulid_Circuit5.png
+[2Kcopying images... [ 82%] Get_Started_with_Arduino/img/Bulid_Circuit6.png
+[2Kcopying images... [ 83%] Get_Started_with_Arduino/img/Bulid_Circuit7.png
+[2Kcopying images... [ 84%] Get_Started_with_Arduino/img/Bulid_Circuit8.png
+[2Kcopying images... [ 84%] Get_Started_with_Arduino/img/Upload_Sketch1.png
+[2Kcopying images... [ 85%] Get_Started_with_Arduino/img/Upload_Sketch2.png
+[2Kcopying images... [ 86%] Get_Started_with_Arduino/img/Upload_Sketch1-1.png
+[2Kcopying images... [ 86%] Get_Started_with_Arduino/img/Upload_Sketch1-2.png
+[2Kcopying images... [ 87%] Get_Started_with_Arduino/img/Upload_Sketch3.png
+[2Kcopying images... [ 88%] Get_Started_with_Arduino/img/Upload_Sketch4.png
+[2Kcopying images... [ 88%] Get_Started_with_Arduino/img/Upload_Sketch5.png
+[2Kcopying images... [ 89%] Get_Started_with_Arduino/img/Upload_Sketch6.png
+[2Kcopying images... [ 90%] Get_Started_with_Arduino/img/Upload_Sketch7.png
+[2Kcopying images... [ 90%] Get_Started_with_Arduino/img/Upload_Sketch8.png
+[2Kcopying images... [ 91%] Get_Started_with_Arduino/img/Library1.png
+[2Kcopying images... [ 92%] Get_Started_with_Arduino/img/Library2.png
+[2Kcopying images... [ 92%] Get_Started_with_Arduino/img/Library3.png
+[2Kcopying images... [ 93%] Get_Started_with_Arduino/img/Library4.png
+[2Kcopying images... [ 94%] Get_Started_with_Arduino/img/Library5.png
+[2Kcopying images... [ 95%] Get_Started_with_Arduino/img/Library6.png
+[2Kcopying images... [ 95%] Get_Started_with_Arduino/img/Install_Arduino_IDE_1.png
+[2Kcopying images... [ 96%] Get_Started_with_Arduino/img/Install_Arduino_IDE_2.png
+[2Kcopying images... [ 97%] Get_Started_with_Arduino/img/Install_Arduino_IDE_3.png
+[2Kcopying images... [ 97%] Get_Started_with_Arduino/img/Install_Arduino_IDE_4.png
+[2Kcopying images... [ 98%] Get_Started_with_Arduino/img/Install_Arduino_IDE_5.png
+[2Kcopying images... [ 99%] Get_Started_with_Arduino/img/Install_Arduino_IDE_6.png
+[2Kcopying images... [ 99%] Get_Started_with_Arduino/img/Install_Arduino_IDE_7.png
+[2Kcopying images... [100%] Get_Started_with_Arduino/img/Install_Arduino_IDE_8.png
+writing mimetype file...
+writing META-INF/container.xml file...
+writing content.opf file...
+writing nav.xhtml file...
+writing toc.ncx file...
+writing BasicStarterKitforArduinoUNOR4WiFi.epub file...
+build succeeded, 5 warnings.
+
+The ePub file is in ../../_readthedocs/epub.

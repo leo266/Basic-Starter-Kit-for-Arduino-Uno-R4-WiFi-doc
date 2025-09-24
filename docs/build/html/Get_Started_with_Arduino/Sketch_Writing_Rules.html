@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arduino IDE Sketch Writing Rules &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Build the Circuit" href="How_to_Build_the_Circuit.html" />
+    <link rel="prev" title="How to upload Sketch to the Board?" href="How_to_Upload_Sketch.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Get_Started_with_Arduino.html">Get Started with Arduino</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Install_Arduino_IDE.html">Install Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Creating_Opening_Saving_Sketches.html">Creating, Opening, and Saving Sketches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_Upload_Sketch.html">How to upload Sketch to the Board?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arduino IDE Sketch Writing Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#structured-code">1. Structured Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meaningful-naming">2. Meaningful Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments">3. Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-constants">4. Use Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avoid-magic-numbers">5. Avoid Magic Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handle-errors">6. Handle Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#format-code">7. Format Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decompose-tasks">8. Decompose Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_Build_the_Circuit.html">How to Build the Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_add_Libraries.html">How to add libraries? (Important)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+      <li class="breadcrumb-item active">Arduino IDE Sketch Writing Rules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Get_Started_with_Arduino/Sketch_Writing_Rules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="arduino-ide-sketch-writing-rules">
+<h1>Arduino IDE Sketch Writing Rules<a class="headerlink" href="#arduino-ide-sketch-writing-rules" title="Link to this heading"></a></h1>
+<p>Arduino is an easy-to-use open-source hardware platform, suitable for beginners to develop electronic projects. Following some basic rules and best practices when writing Arduino code (called “sketch”) can help improve code readability, maintainability, and efficiency. This article will introduce these rules and best practices and provide detailed explanations.</p>
+<section id="structured-code">
+<h2>1. Structured Code<a class="headerlink" href="#structured-code" title="Link to this heading"></a></h2>
+<p>A typical Arduino sketch consists of two main parts: the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">setup()</span></code> function: used for initialization settings, such as setting pin modes, starting serial communication, etc. This function is executed once at the start of the program.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Initialization settings</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">loop()</span></code> function: contains the main program logic, which is executed repeatedly.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Main program logic</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="meaningful-naming">
+<h2>2. Meaningful Naming<a class="headerlink" href="#meaningful-naming" title="Link to this heading"></a></h2>
+<p>Use meaningful variable names, function names, and constant names to make the code easy to understand and maintain.</p>
+<ul class="simple">
+<li><p>Variable names should describe their purpose, such as <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">sensorValue;</span></code>.</p></li>
+<li><p>Function names should describe their function, such as <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">readSensor();</span></code>.</p></li>
+<li><p>Constant names are usually in uppercase letters and underscores, such as <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">LED_PIN</span> <span class="pre">=</span> <span class="pre">13;</span></code>.</p></li>
+</ul>
+</section>
+<section id="comments">
+<h2>3. Comments<a class="headerlink" href="#comments" title="Link to this heading"></a></h2>
+<p>Adding comments to the code can help yourself and others understand the code logic. Comments should be concise and clear.</p>
+<ul>
+<li><p>Use single-line comments to explain the function of variables, functions, or code blocks.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span><span class="w"> </span><span class="n">sensorValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sensor reading</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use block comments to explain complex logic or algorithms.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Read sensor data and calculate the average</span>
+<span class="cm"> */</span>
+<span class="kr">void</span><span class="w"> </span><span class="nf">readSensor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Code implementation</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="use-constants">
+<h2>4. Use Constants<a class="headerlink" href="#use-constants" title="Link to this heading"></a></h2>
+<p>For values that do not change, use the <code class="docutils literal notranslate"><span class="pre">const</span></code> keyword to define constants, which can improve code readability and security.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">LED_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="c1">// LED connected to digital pin 13</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-magic-numbers">
+<h2>5. Avoid Magic Numbers<a class="headerlink" href="#avoid-magic-numbers" title="Link to this heading"></a></h2>
+<p>“Magic numbers” refer to numerical constants used directly in the code. Use meaningful named constants instead to improve code readability.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="n">MAX_SPEED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
+<span class="nf">analogWrite</span><span class="p">(</span><span class="n">motorPin</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SPEED</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="handle-errors">
+<h2>6. Handle Errors<a class="headerlink" href="#handle-errors" title="Link to this heading"></a></h2>
+<p>When writing code, consider possible error conditions and handle them appropriately. For example, check function return values to ensure device connections are normal.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">WL_CONNECTED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Handle WiFi not connected case</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="format-code">
+<h2>7. Format Code<a class="headerlink" href="#format-code" title="Link to this heading"></a></h2>
+<p>Good code formatting helps improve readability. Maintain consistent indentation style, appropriate spacing, and alignment.</p>
+<ul class="simple">
+<li><p>Each code block should be indented by two or four spaces.</p></li>
+<li><p>Leave a blank line between functions.</p></li>
+<li><p>Leave spaces on both sides of operators.</p></li>
+</ul>
+</section>
+<section id="decompose-tasks">
+<h2>8. Decompose Tasks<a class="headerlink" href="#decompose-tasks" title="Link to this heading"></a></h2>
+<p>Decompose complex tasks into multiple small functions, each performing a distinct function. This makes the code simpler, easier to debug, and maintain.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">initializePins</span><span class="p">();</span>
+<span class="w">  </span><span class="n">initializeSerial</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">initializePins</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span><span class="w"> </span><span class="kr">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">initializeSerial</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Following the above rules and best practices can help you write high-quality Arduino code. Good programming habits not only improve code readability and maintainability but also reduce errors and enhance development efficiency. Hopefully, these rules will help you achieve better results in Arduino development.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="How_to_Upload_Sketch.html" class="btn btn-neutral float-left" title="How to upload Sketch to the Board?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="How_to_Build_the_Circuit.html" class="btn btn-neutral float-right" title="How to Build the Circuit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

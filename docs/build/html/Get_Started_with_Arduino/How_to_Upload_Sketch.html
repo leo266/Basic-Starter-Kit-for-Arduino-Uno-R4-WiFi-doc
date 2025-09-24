@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to upload Sketch to the Board? &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arduino IDE Sketch Writing Rules" href="Sketch_Writing_Rules.html" />
+    <link rel="prev" title="Creating, Opening, and Saving Sketches" href="Creating_Opening_Saving_Sketches.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Get_Started_with_Arduino.html">Get Started with Arduino</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Install_Arduino_IDE.html">Install Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Creating_Opening_Saving_Sketches.html">Creating, Opening, and Saving Sketches</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to upload Sketch to the Board?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choose-board-and-port">1. Choose Board and port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verify-the-sketch">2. Verify the Sketch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upload-sketch">3. Upload sketch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Sketch_Writing_Rules.html">Arduino IDE Sketch Writing Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_Build_the_Circuit.html">How to Build the Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_add_Libraries.html">How to add libraries? (Important)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+      <li class="breadcrumb-item active">How to upload Sketch to the Board?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Get_Started_with_Arduino/How_to_Upload_Sketch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-upload-sketch-to-the-board">
+<h1>How to upload Sketch to the Board?<a class="headerlink" href="#how-to-upload-sketch-to-the-board" title="Link to this heading"></a></h1>
+<p>In this section, you will learn how to upload the sketch created previously to the Arduino board, as well as learn about some considerations.</p>
+<section id="choose-board-and-port">
+<h2>1. Choose Board and port<a class="headerlink" href="#choose-board-and-port" title="Link to this heading"></a></h2>
+<p>Arduino development boards usually come with a USB cable. You can use it to connect the board to your computer.</p>
+<p>Select the correct <strong>Board</strong> and <strong>Port</strong> in the Arduino IDE. Normally, Arduino boards are recognized automatically by the computer and assigned a port, so you can select it here.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch1.png"><img alt="../_images/Upload_Sketch1.png" src="../_images/Upload_Sketch1.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>If your board is already plugged in, but not recognized, check if the <strong>INSTALLED</strong> logo appears in the <strong>Arduino UNO R4 Boards</strong> section of the <strong>Boards Manager</strong>, if not, please scroll down a bit and click on <strong>INSTALL</strong>.</p>
+<p>Search <strong>“UNO R4”</strong> in <strong>Boards Manager</strong> and check if the corresponding library is installed.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch2.png"><img alt="../_images/Upload_Sketch2.png" src="../_images/Upload_Sketch2.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>Reopening the Arduino IDE and re-plugging the Arduino board will fix most of the problems. You can also click <strong>Tools</strong> -&gt; <strong>Board</strong> or <strong>Port</strong> to select them.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch1-1.png"><img alt="../_images/Upload_Sketch1-1.png" src="../_images/Upload_Sketch1-1.png" style="width: 90%;" />
+</a>
+<a class="reference internal image-reference" href="../_images/Upload_Sketch1-2.png"><img alt="../_images/Upload_Sketch1-2.png" src="../_images/Upload_Sketch1-2.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+</section>
+<section id="verify-the-sketch">
+<h2>2. Verify the Sketch<a class="headerlink" href="#verify-the-sketch" title="Link to this heading"></a></h2>
+<p>After clicking the Verify button, the sketch will be compiled to see if there are any errors.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch3.png"><img alt="../_images/Upload_Sketch3.png" src="../_images/Upload_Sketch3.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>You can use it to find mistakes if you delete some characters or type a few letters by mistake. From the message bar, you can see where and what type of errors occurred.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch4.png"><img alt="../_images/Upload_Sketch4.png" src="../_images/Upload_Sketch4.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>If there are no errors, you will see a message like the one below.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch5.png"><img alt="../_images/Upload_Sketch5.png" src="../_images/Upload_Sketch5.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+</section>
+<section id="upload-sketch">
+<h2>3. Upload sketch<a class="headerlink" href="#upload-sketch" title="Link to this heading"></a></h2>
+<p>After completing the above steps, click the <strong>Upload</strong> button to upload this sketch to the board.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch6.png"><img alt="../_images/Upload_Sketch6.png" src="../_images/Upload_Sketch6.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>If successful, you will be able to see the following prompt.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/Upload_Sketch7.png"><img alt="../_images/Upload_Sketch7.png" src="../_images/Upload_Sketch7.png" style="width: 90%;" />
+</a>
+</div></blockquote>
+<p>At the same time, the on-board LED blink.</p>
+<a class="reference internal image-reference" href="../_images/Upload_Sketch8.png"><img alt="../_images/Upload_Sketch8.png" class="align-center" src="../_images/Upload_Sketch8.png" style="width: 400px;" />
+</a>
+<br/><p>The Arduino board will automatically run the sketch after power is applied after the sketch is uploaded. The running program can be overwritten by uploading a new sketch.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Creating_Opening_Saving_Sketches.html" class="btn btn-neutral float-left" title="Creating, Opening, and Saving Sketches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Sketch_Writing_Rules.html" class="btn btn-neutral float-right" title="Arduino IDE Sketch Writing Rules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

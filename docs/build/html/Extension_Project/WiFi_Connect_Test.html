@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WiFi Connect Test &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Web Control LED (WiFi Access Point)" href="Web_Control_LED.html" />
+    <link rel="prev" title="12x8 LED Matrix" href="12x8_LED_Matrix.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Extension_Project.html">Extension_Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="12x8_LED_Matrix.html">12x8 LED Matrix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">WiFi Connect Test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upload-the-code">1. Upload the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-explanation">2. Code explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_LED.html">Web Control LED (WiFi Access Point)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_Relay.html">Web Control Relay (Station Mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Digital_Dice_LED_Matrix.html">Digital Dice LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greedy_Snake_Game.html">Greedy Snake Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ping-Pong_Game.html">Ping-Pong Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Real-time_Weather_OLED.html">Real-time Weather OLED</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Extension_Project.html">Extension_Project</a></li>
+      <li class="breadcrumb-item active">WiFi Connect Test</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Extension_Project/WiFi_Connect_Test.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wifi-connect-test">
+<span id="ext-wifi-connect-test"></span><h1>WiFi Connect Test<a class="headerlink" href="#wifi-connect-test" title="Link to this heading"></a></h1>
+<p>This tutorial will guide you through the essential steps to connect your Arduino board to a Wi-Fi network. You’ll learn how to initialize the Wi-Fi module, verify its firmware, and securely join a network using its SSID and password. Once connected, you’ll discover how to monitor important network details like your device’s IP and MAC addresses, as well as the network’s signal strength, directly from the serial console. This tutorial serves as both a practical guide to Wi-Fi connectivity and an introduction to network monitoring with Arduino, helping you establish and maintain a reliable Wi-Fi connection.</p>
+<section id="upload-the-code">
+<h2>1. Upload the code<a class="headerlink" href="#upload-the-code" title="Link to this heading"></a></h2>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">16_WiFi_Connect_Test.ino</span></code> file under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code>, or copy this code into <strong>Arduino IDE</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wi-Fi® support is enabled via the built-in <code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> library that is shipped with the Arduino UNO R4 Core. Installing the core automatically installs the <code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> library.</p>
+</div>
+<p>You still need to create or modify <code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code>, replace <code class="docutils literal notranslate"><span class="pre">SECRET_SSID</span></code> and <code class="docutils literal notranslate"><span class="pre">SECRET_PASS</span></code> with the name and password of the wifi you want to connect to. The file should contain:</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="c1">//arduino_secrets.h header file</span>
+<span class="cp">#define SECRET_SSID &quot;yournetwork&quot;</span>
+<span class="cp">#define SECRET_PASS &quot;yourpassword&quot;</span>
+</pre></div>
+</div>
+<p>Open the serial monitor, and you will see similar content as follows. Arduino will output your device’s IP and MAC addresses, as well as the network’s signal strength.</p>
+<a class="reference internal image-reference" href="../_images/WiFi_Connect_Test.png"><img alt="../_images/WiFi_Connect_Test.png" src="../_images/WiFi_Connect_Test.png" style="width: 100%;" />
+</a>
+</section>
+<section id="code-explanation">
+<h2>2. Code explanation<a class="headerlink" href="#code-explanation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Including Libraries and Secret Data</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;WiFiS3.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;arduino_secrets.h&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WiFiS3</span></code> is a library that provides functions for Wi-Fi connectivity. Installing the R4 core automatically installs the WiFiS3 library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arduino_secrets.h</span></code> is a separate file where you keep your SSID and password so they’re not exposed in your main code. Storing network and password separately reduces accidental sharing of Wi-Fi credentials.</p></li>
+</ul>
+<br/></li>
+<li><p>Declaring Global Variables</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_SSID</span><span class="p">;</span>
+<span class="kr">char</span><span class="w"> </span><span class="n">pass</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SECRET_PASS</span><span class="p">;</span>
+<span class="kr">int</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WL_IDLE_STATUS</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ssid</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code> contain your network name and password.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">status</span></code> will store the current status of your Wi-Fi connection.</p></li>
+</ul>
+<br/></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup()</span></code> Function</p>
+<p>The Serial interface is initialized with a baud rate of 9600. The <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">(!Serial);</span></code> line makes sure that the program waits until the Serial connection is established.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Initialize serial and wait for port to open:</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nf">Serial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">;</span><span class="w"> </span><span class="c1">// wait for serial port to connect. Needed for native USB port only</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And then, the code checks whether the Wi-Fi module is available or not. If not, the program will halt, effectively stopping any further execution.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="c1">// check for the WiFi module:</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">WL_NO_MODULE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Communication with WiFi module failed!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// don&#39;t continue</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kr">true</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>In this part of the code, we check if the firmware version of uno R4 wifi is up to date. If it is not the latest version, a prompt for upgrade will be displayed. You can refer to <span class="xref std std-ref">update_firmware</span> for firmware upgrade.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="kr">String</span><span class="w"> </span><span class="n">fv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">WiFi</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fv</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">WIFI_FIRMWARE_LATEST_VERSION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;Please upgrade the firmware&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loop()</span></code> Function</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// check the network connection once every 10 seconds:</span>
+<span class="w">  </span><span class="nf">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printCurrentNet</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Every 10 seconds, the function <code class="docutils literal notranslate"><span class="pre">printCurrentNet()</span></code> is called to print the current network details.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Reference</strong></p>
+<p><a class="reference external" href="https://docs.arduino.cc/tutorials/uno-r4-wifi/wifi-examples">UNO R4 WiFi Network Examples</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="12x8_LED_Matrix.html" class="btn btn-neutral float-left" title="12x8 LED Matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Web_Control_LED.html" class="btn btn-neutral float-right" title="Web Control LED (WiFi Access Point)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

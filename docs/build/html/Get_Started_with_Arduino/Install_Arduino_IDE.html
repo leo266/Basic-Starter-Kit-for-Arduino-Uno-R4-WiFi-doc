@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install Arduino IDE &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating, Opening, and Saving Sketches" href="Creating_Opening_Saving_Sketches.html" />
+    <link rel="prev" title="Get Started with Arduino" href="Get_Started_with_Arduino.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Get_Started_with_Arduino.html">Get Started with Arduino</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install Arduino IDE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-arduino-ide-2-x-x">Download the Arduino IDE 2.x.x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#open-the-ide">Open the IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Creating_Opening_Saving_Sketches.html">Creating, Opening, and Saving Sketches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_Upload_Sketch.html">How to upload Sketch to the Board?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sketch_Writing_Rules.html">Arduino IDE Sketch Writing Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_Build_the_Circuit.html">How to Build the Circuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="How_to_add_Libraries.html">How to add libraries? (Important)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Extension_Project/Extension_Project.html">Extension_Project</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+      <li class="breadcrumb-item active">Install Arduino IDE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Get_Started_with_Arduino/Install_Arduino_IDE.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="install-arduino-ide">
+<span id="install-arduino"></span><h1>Install Arduino IDE<a class="headerlink" href="#install-arduino-ide" title="Link to this heading"></a></h1>
+<p>The Arduino IDE, known as Arduino Integrated Development Environment, provides all the software support needed to complete an Arduino project. It is a programming software specifically designed for Arduino, provided by the Arduino team, that allows us to write programs and upload them to the Arduino board.</p>
+<p>The Arduino IDE 2.0 is an open-source project. It is a big step from its sturdy predecessor, Arduino IDE 1.x, and comes with revamped UI, improved board &amp; library manager, debugger, autocomplete feature and much more.</p>
+<p>In this tutorial, we will show how to download and install the Arduino IDE 2.0 on your Windows, Mac, or Linux computer.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Windows - Win 10 and newer, 64 bits</p></li>
+<li><p>Linux - 64 bits</p></li>
+<li><p>Mac OS Intel - Version 10.14: “Mojave” or newer, 64 bits</p></li>
+<li><p>Mac OS Apple Silicon - Version 11: “Big Sur” or newer, 64 bits</p></li>
+</ul>
+</section>
+<section id="download-the-arduino-ide-2-x-x">
+<h2>Download the Arduino IDE 2.x.x<a class="headerlink" href="#download-the-arduino-ide-2-x-x" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Visit <a class="reference external" href="https://www.arduino.cc/en/software">Download Arduino IDE</a> page.</p></li>
+<li><p>Download the IDE for your OS version.</p>
+<img alt="../_images/Install_Arduino_IDE_1.png" src="../_images/Install_Arduino_IDE_1.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: Uploading code to the Arduino UNO R4 requires Arduino IDE version 2.2 or higher. If your version is older, please upgrade to the latest version.</p>
+</div>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Double click the <code class="docutils literal notranslate"><span class="pre">arduino-ide_xxxx.exe</span></code> file to run the downloaded file.</p></li>
+<li><p>Read the License Agreement and agree it.</p>
+<img alt="../_images/Install_Arduino_IDE_2.png" src="../_images/Install_Arduino_IDE_2.png" />
+</li>
+<li><p>Choose installation options.</p>
+<img alt="../_images/Install_Arduino_IDE_3.png" src="../_images/Install_Arduino_IDE_3.png" />
+</li>
+<li><p>Choose install location. It is recommended that the software be installed on a drive other than the system drive.</p>
+<img alt="../_images/Install_Arduino_IDE_4.png" src="../_images/Install_Arduino_IDE_4.png" />
+</li>
+<li><p>Then Finish.</p>
+<img alt="../_images/Install_Arduino_IDE_5.png" src="../_images/Install_Arduino_IDE_5.png" />
+</li>
+</ol>
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading"></a></h3>
+<p>Double click on the downloaded <code class="docutils literal notranslate"><span class="pre">arduino_ide_xxxx.dmg</span></code> file and follow the instructions to copy the <strong>Arduino IDE.app</strong> to the <strong>Applications</strong> folder, you will see the Arduino IDE installed successfully after a few seconds.</p>
+<a class="reference internal image-reference" href="../_images/Install_Arduino_IDE_6.webp"><img alt="../_images/Install_Arduino_IDE_6.webp" src="../_images/Install_Arduino_IDE_6.webp" style="width: 800px;" />
+</a>
+</section>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
+<p>For the tutorial on installing the Arduino IDE 2.0 on a Linux system, please refer <a class="reference external" href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux">Linux-Install Arduino IDE</a></p>
+</section>
+</section>
+<section id="open-the-ide">
+<h2>Open the IDE<a class="headerlink" href="#open-the-ide" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>When you first open Arduino IDE 2.0, it automatically installs the Arduino AVR Boards, built-in libraries, and other required files.</p>
+<img alt="../_images/Install_Arduino_IDE_7.png" src="../_images/Install_Arduino_IDE_7.png" />
+</li>
+<li><p>In addition, your firewall or security center may pop up a few times asking you if you want to install some device driver. Please install all of them.</p>
+<img alt="../_images/Install_Arduino_IDE_8.png" src="../_images/Install_Arduino_IDE_8.png" />
+</li>
+<li><p>Now your Arduino IDE is ready!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the event that some installations didn’t work due to network issues or other reasons, you can reopen the Arduino IDE and it will finish the rest of the installation. The Output window will not automatically open after all installations are complete unless you click Verify or Upload.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Get_Started_with_Arduino.html" class="btn btn-neutral float-left" title="Get Started with Arduino" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Creating_Opening_Saving_Sketches.html" class="btn btn-neutral float-right" title="Creating, Opening, and Saving Sketches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

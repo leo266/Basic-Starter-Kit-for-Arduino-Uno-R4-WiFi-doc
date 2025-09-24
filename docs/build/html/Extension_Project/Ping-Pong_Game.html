@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ping-Pong Game &mdash; Basic Starter Kit for Arduino UNO R4 WiFi  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Real-time Weather OLED" href="Real-time_Weather_OLED.html" />
+    <link rel="prev" title="Greedy Snake Game" href="Greedy_Snake_Game.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Get_Started_with_Arduino/Get_Started_with_Arduino.html">Get Started with Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Download_the_Code/Download_the_Code.html">Download the Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Components_Kit/Components_Kit.html">Components Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Basic_Project/Basic_Project.html">Basic Project</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Extension_Project.html">Extension_Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="12x8_LED_Matrix.html">12x8 LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WiFi_Connect_Test.html">WiFi Connect Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_LED.html">Web Control LED (WiFi Access Point)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Web_Control_Relay.html">Web Control Relay (Station Mode)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Digital_Dice_LED_Matrix.html">Digital Dice LED Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greedy_Snake_Game.html">Greedy Snake Game</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ping-Pong Game</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wiring">Wiring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-explanation">Code Explanation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Real-time_Weather_OLED.html">Real-time Weather OLED</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Basic Starter Kit for Arduino UNO R4 WiFi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Extension_Project.html">Extension_Project</a></li>
+      <li class="breadcrumb-item active">Ping-Pong Game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Extension_Project/Ping-Pong_Game.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ping-pong-game">
+<span id="ext-ping-pong-game"></span><h1>Ping-Pong Game<a class="headerlink" href="#ping-pong-game" title="Link to this heading"></a></h1>
+<p>This is a simple Pong game designed using an OLED display and an Arduino board.
+In the Pong game, players compete against the computer, controlling a vertical paddle to bounce back a bouncing ball.
+The goal is to prevent the ball from passing your paddle’s edge, or else the opponent scores.</p>
+<p>The game mechanics can be divided into the following parts:</p>
+<ol class="arabic simple">
+<li><p>Ball Movement - The ball moves along its current direction at a set speed. Whenever the ball collides with a paddle, its speed increases, making the game more challenging.</p></li>
+<li><p>Paddle Movement - Used to block the ball’s movement, the paddle can move up or down. Players control their own paddle using buttons, while the computer’s paddle automatically follows the ball’s position.</p></li>
+<li><p>Scoring - Whenever the ball goes beyond the left or right edge of the screen, the corresponding player or CPU scores.</p></li>
+</ol>
+<section id="wiring">
+<h2>Wiring<a class="headerlink" href="#wiring" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To protect the <span class="xref std std-ref">cpn_power</span>’s battery, please fully charge it before using it for the first time.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/Ping_Pong_Game_Wiring.png"><img alt="../_images/Ping_Pong_Game_Wiring.png" class="align-center" src="../_images/Ping_Pong_Game_Wiring.png" style="width: 100%;" />
+</a>
+<p><strong>Schematic</strong></p>
+<a class="reference internal image-reference" href="../_images/Ping_Pong_Game_Wiring1.png"><img alt="../_images/Ping_Pong_Game_Wiring1.png" class="align-center" src="../_images/Ping_Pong_Game_Wiring1.png" style="width: 100%;" />
+</a>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can open the file <code class="docutils literal notranslate"><span class="pre">21_Ping_Pong_Game.ino</span></code> under the path of <code class="docutils literal notranslate"><span class="pre">Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code</span></code> directly.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To install the library, use the Arduino Library Manager and search for <strong>“Adafruit SSD1306”</strong> and <strong>“Adafruit GFX”</strong> and install them.</p>
+</div>
+<p><strong>How it works?</strong></p>
+</section>
+<section id="code-explanation">
+<h2>Code Explanation<a class="headerlink" href="#code-explanation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Importing Required Libraries</p>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">Adafruit_GFX</span></code>, <code class="docutils literal notranslate"><span class="pre">Adafruit_SSD1306</span></code>, <code class="docutils literal notranslate"><span class="pre">SPI</span></code>, and <code class="docutils literal notranslate"><span class="pre">Wire</span></code> libraries for handling the OLED display and communication.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_GFX.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Adafruit_SSD1306.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;SPI.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Wire.h&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configuration and Variable Initialization</p>
+<p>Define display dimensions, button pins, and game variables such as ball and paddle settings.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SCREEN_WIDTH 128</span>
+<span class="cp">#define SCREEN_HEIGHT 64</span>
+<span class="cp">#define UP_BUTTON 3</span>
+<span class="cp">#define DOWN_BUTTON 2</span>
+<span class="cp">#define OLED_RESET 4</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">unsigned</span><span class="w"> </span><span class="kr">long</span><span class="w"> </span><span class="n">BALL_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">unsigned</span><span class="w"> </span><span class="kr">long</span><span class="w"> </span><span class="n">PADDLE_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">PADDLE_HEIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">CPU_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="kr">const</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">PLAYER_X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">115</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup()</span></code> Function</p>
+<p>Initialize serial communication, random seed, display, and button pins. Set up initial ball and paddle positions.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">randomSeed</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">));</span>
+<span class="w">  </span><span class="nf">display</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">SSD1306_SWITCHCAPVCC</span><span class="p">,</span><span class="w"> </span><span class="mh">0x3C</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">UP_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="nf">pinMode</span><span class="p">(</span><span class="n">DOWN_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="kr">INPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">drawCourt</span><span class="p">();</span>
+<span class="w">  </span><span class="n">displayScore</span><span class="p">();</span>
+<span class="w">  </span><span class="n">ball_update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">millis</span><span class="p">();</span>
+<span class="w">  </span><span class="n">paddle_update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ball_update</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loop()</span></code> Function</p>
+<p>Main game loop to handle ball movement, paddle updates, and scoring.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nb">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Ball and paddle logic</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">millis</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ball_update</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Ball movement and collision detection</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">millis</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">paddle_update</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Paddle updates</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nf">display</span><span class="p">.</span><span class="nf">display</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crossesPlayerPaddle()</span></code> and <code class="docutils literal notranslate"><span class="pre">crossesCpuPaddle()</span></code> Functions</p>
+<p>Check if the ball crosses the player or CPU paddle.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">bool</span><span class="w"> </span><span class="nf">crossesPlayerPaddle</span><span class="p">(</span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">old_x</span><span class="p">,</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">new_x</span><span class="p">,</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">ball_y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Check if ball crosses player paddle</span>
+<span class="p">}</span>
+
+<span class="kr">bool</span><span class="w"> </span><span class="nf">crossesCpuPaddle</span><span class="p">(</span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">old_x</span><span class="p">,</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">new_x</span><span class="p">,</span><span class="w"> </span><span class="kr">uint8_t</span><span class="w"> </span><span class="n">ball_y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Check if ball crosses CPU paddle</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drawCourt()</span></code> and <code class="docutils literal notranslate"><span class="pre">displayScore()</span></code> Functions</p>
+<p>Draw the game court and display the score.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span><span class="w"> </span><span class="nf">drawCourt</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">display</span><span class="p">.</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SCREEN_WIDTH</span><span class="p">,</span><span class="w"> </span><span class="n">SCREEN_HEIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">WHITE</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span><span class="w"> </span><span class="nf">displayScore</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Update score display</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Greedy_Snake_Game.html" class="btn btn-neutral float-left" title="Greedy Snake Game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Real-time_Weather_OLED.html" class="btn btn-neutral float-right" title="Real-time Weather OLED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024,Bot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
