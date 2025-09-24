@@ -58,8 +58,7 @@ macOS
 
 Double click on the downloaded ``arduino_ide_xxxx.dmg`` file and follow the instructions to copy the **Arduino IDE.app** to the **Applications** folder, you will see the Arduino IDE installed successfully after a few seconds.
 
-..
-   image:: img/Install_Arduino_IDE_6.png
+.. image:: img/Install_Arduino_IDE_6.png
    :width: 800
 
 Linux

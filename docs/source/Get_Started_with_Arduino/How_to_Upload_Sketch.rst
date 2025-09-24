@@ -43,8 +43,7 @@ You can use it to find mistakes if you delete some characters or type a few lett
 
 If there are no errors, you will see a message like the one below.
 
-    ..
-       image:: img/Upload_Sketch5.png
+    .. image:: img/Upload_Sketch5.png
        :width: 90%
 
 
