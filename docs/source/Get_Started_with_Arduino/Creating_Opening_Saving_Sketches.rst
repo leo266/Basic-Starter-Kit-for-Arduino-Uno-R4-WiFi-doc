@@ -60,7 +60,7 @@ Creating, Saving Sketches
 #. Now let's try to create a new sketch. Copy the following code into the Arduino IDE to replace the original code.
 
 
-   .. image:: img/Creat_Skerch2.png
+   .. image:: img/Creat_Skerch2.webp
 
    .. code-block:: Arduino
 
