@@ -5,9 +5,10 @@ Many of the things you use every day are powered by electricity, like the lights
 
 To use electricity, you must build an electrical circuit. Basically, a circuit is a path through which electricity flows, or an electronic circuit, and is made up of electrical devices and components (appliances) that are connected in a certain way, such as resistors, capacitors, power supplies, and switches.
 
-.. image:: img/Bulid_Circuit1.png
-    :align: center
-    :width: 250
+..
+   image:: img/Bulid_Circuit1.png
+   :align: center
+   :width: 250
 
 .. raw:: html
     
@@ -30,9 +31,10 @@ However, doing this directly can quickly damage not just the LED but also risk h
 
 The circuit they form is shown below.
 
-.. image:: img/Bulid_Circuit3.png
-    :align: center
-    :width: 65%
+..
+   image:: img/Bulid_Circuit3.png
+   :align: center
+   :width: 65%
 
 .. raw:: html
     
@@ -90,9 +92,10 @@ Here are some things you should know about breadboards.
 
 **Let us follow the direction of the current to build the circuit!**
 
-.. image:: img/Bulid_Circuit5.png
-    :align: center
-    :width: 60%
+..
+   image:: img/Bulid_Circuit5.png
+   :align: center
+   :width: 60%
 
 .. raw:: html
     
@@ -125,9 +128,10 @@ Direction of the circuit
 -------------------------------
 There is an orientation to circuits, and the orientation plays a significant role in certain electronic components. There are some devices with polarity, which means they must be connected correctly based on their positive and negative poles. Circuits built with the wrong orientation will not function properly.
 
-.. image:: img/Bulid_Circuit6.png
-    :align: center
-    :width: 60%
+..
+   image:: img/Bulid_Circuit6.png
+   :align: center
+   :width: 60%
 
 .. raw:: html
     
@@ -158,8 +162,9 @@ Therefore, current (I) = voltage (V) / resistance (R).
 
 About Ohm's law we can do a simple experiment.
 
-.. image:: img/Bulid_Circuit7.png
-    :width: 55%
+..
+   image:: img/Bulid_Circuit7.png
+   :width: 55%
 
 By changing the wire connecting 5V to 3.3V , the LED gets dimmer.
 If you change the resistor from 1000 ohm to 2000 ohm (color ring: red, black, black, brown, and brown), you will notice that the LED becomes dimmer than before. The larger the resistor, the dimmer the LED.
