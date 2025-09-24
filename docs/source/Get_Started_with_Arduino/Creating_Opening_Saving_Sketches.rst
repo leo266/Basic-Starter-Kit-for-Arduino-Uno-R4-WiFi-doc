@@ -93,6 +93,7 @@ Opening a Sketch
 3. Navigate to the folder where your sketch is saved (Arduino sketches typically have a ``.ino`` file extension).
 4. Select the sketch file and click ``Open``.
 You can also quickly open recently used sketches by going to ``File > Sketchbook`` and selecting a sketch from the list.
-    .. image:: img/Creat_Skerch5.png
+
+.. image:: img/Creat_Skerch5.png
 
 Please continue with the next section to learn how to upload this created sketch to your Arduino board.
