@@ -11,9 +11,10 @@ The active buzzer is a typical digital output device that is as easy to use as l
 Two types of buzzers are included in the kit. 
 We need to use active buzzer. Turn them around, the sealed back (not the exposed PCB) is the one we want.
 
-.. image:: img/Active_Buzzer.png
-    :align: center
-    :width: 70%
+.. 
+   image:: img/Active_Buzzer.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 70%
 
 Wiring
 ----------------------
@@ -28,9 +29,10 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. image:: img/Active_Buzzer_Wiring1.png
-    :align: center
-    :width: 80%
+.. 
+   image:: img/Active_Buzzer_Wiring1.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 80%
 
 Code
 ---------------

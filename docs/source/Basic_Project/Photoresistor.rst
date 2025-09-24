@@ -21,9 +21,10 @@ In this example, we use analog pin ( A0 ) to read the value of ph
 Schematic Diagram
 -----------------------
 
-.. image:: img/Photoresistor_Wiring1.png
-    :align: center
-    :width: 70%
+.. 
+   image:: img/Photoresistor_Wiring1.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 70%
 
 Code
 ---------------
@@ -33,4 +34,4 @@ Code
     * You can open the file ``06_Photoresistor.ino`` under the path of ``Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code`` directly.
 
 
-After uploading the codes to the uno board, you can open the serial monitor to see the read value of the pin. When the ambient light becomes stronger, the reading will increase correspondingly, and the pin reading range is 「0」~「1023」.  However, according to the environmental conditions and the characteristics of the photoresistor, the actual reading range may be smaller than the theoretical range. 
+After uploading the codes to the uno board, you can open the serial monitor to see the read value of the pin. When the ambient light becomes stronger, the reading will increase correspondingly, and the pin reading range is 「0」~「1023」.  However, according to the environmental conditions and the characteristics of the photoresistor, the actual reading range may be smaller than the theoretical range.

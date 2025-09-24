@@ -17,9 +17,10 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. image:: img/Led_Blink_Wiring1.png
-    :align: center
-    :width: 80%
+.. 
+   image:: img/Led_Blink_Wiring1.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 80%
 
 
 Code
@@ -68,4 +69,4 @@ so we use a ``delay(1000)`` code to let the controller do nothing for 1000 ms.
 
 .. code-block:: arduino
 
-    delay(1000);   
+    delay(1000);

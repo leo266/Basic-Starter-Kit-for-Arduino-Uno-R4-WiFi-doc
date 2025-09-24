@@ -14,9 +14,10 @@ Wiring
 
 **Schematic**
 
-.. image:: img/Real_time_Weather_OLED_Wiring1.png
-    :width: 60%
-    :align: center
+.. 
+   image:: img/Real_time_Weather_OLED_Wiring1.png (COMMENTED OUT - WEBP format)
+   :width: 60%
+   :align: center
 
 OpenWeather
 ---------------------------
@@ -29,27 +30,32 @@ Get OpenWeather API keys
 
 #. Visit OpenWeather to log in/create an account.
 
-   .. image:: img/Real_time_Weather_OLED_Code.png
+   .. 
+      image:: img/Real_time_Weather_OLED_Code.png (COMMENTED OUT - WEBP format)
 
 
 #. Click into the API page from the navigation bar.
 
-   .. image:: img/Real_time_Weather_OLED_Code1.png
+   .. 
+      image:: img/Real_time_Weather_OLED_Code1.png (COMMENTED OUT - WEBP format)
 
 
 #. Find **Current Weather Data** and click Subscribe.
 
-   .. image:: img/Real_time_Weather_OLED_Code2.png
+   .. 
+      image:: img/Real_time_Weather_OLED_Code2.png (COMMENTED OUT - WEBP format)
 
 
 #. Under **Current weather and forecasts collection**, subscribe to the appropriate service. In our project, Free is good enough.
 
-   .. image:: img/Real_time_Weather_OLED_Code3.png
+   .. 
+      image:: img/Real_time_Weather_OLED_Code3.png (COMMENTED OUT - WEBP format)
 
 
 #. Copy the Key from the **API keys** page.
 
-   .. image:: img/Real_time_Weather_OLED_Code4.png
+   .. 
+      image:: img/Real_time_Weather_OLED_Code4.png (COMMENTED OUT - WEBP format)
 
 #. Copy it to the ``arduino_secrets.h`` API_KEY.
 

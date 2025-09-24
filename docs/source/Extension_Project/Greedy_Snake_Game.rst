@@ -15,7 +15,8 @@ Wiring
 
 **Schematic**
 
-.. image:: img/Greedy_Snake_Game_Wiring1.png
+.. 
+   image:: img/Greedy_Snake_Game_Wiring1.png (COMMENTED OUT - WEBP format)
    :width: 80%
    :align: center
 

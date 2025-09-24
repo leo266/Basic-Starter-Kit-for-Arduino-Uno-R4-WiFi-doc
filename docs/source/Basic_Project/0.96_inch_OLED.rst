@@ -30,9 +30,10 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. image:: img/0.96_inch_OLED_Wiring1.png
-    :align: center
-    :width: 70%
+.. 
+   image:: img/0.96_inch_OLED_Wiring1.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 70%
 
 Code
 ---------------

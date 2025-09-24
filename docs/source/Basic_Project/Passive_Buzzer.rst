@@ -26,9 +26,10 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. image:: img/Passive_Buzzer_Wiring1.png
-    :align: center
-    :width: 80%
+.. 
+   image:: img/Passive_Buzzer_Wiring1.png (COMMENTED OUT - WEBP format)
+   :align: center
+   :width: 80%
 
 Code
 ---------------

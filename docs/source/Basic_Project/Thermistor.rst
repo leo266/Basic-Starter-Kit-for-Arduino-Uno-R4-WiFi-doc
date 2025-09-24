@@ -20,7 +20,8 @@ In this example, we use the analog pin A0 to get the value of Thermistor. One pi
 Schematic Diagram
 -----------------------
 
-.. image:: img/Thermistor_Wiring1.png
+.. 
+   image:: img/Thermistor_Wiring1.png (COMMENTED OUT - WEBP format)
    :align: center
    :width: 70%
 
