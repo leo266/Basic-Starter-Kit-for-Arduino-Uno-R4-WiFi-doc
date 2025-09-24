@@ -4,6 +4,3 @@ sphinx-rtd-theme
 sphinx_conestack_theme
 readthedocs-sphinx-search
 myst-parser
-# PDF生成所需的依赖
-sphinxcontrib-latexbuildapi
-latexmk
