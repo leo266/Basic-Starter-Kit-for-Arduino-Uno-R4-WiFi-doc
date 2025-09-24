@@ -21,10 +21,9 @@ In this example, we use analog pin ( A0 ) to read the value of ph
 Schematic Diagram
 -----------------------
 
-.. 
-   .. image:: img/Photoresistor_Wiring1.png
-   :align: center
-   :width: 70%
+.. image:: img/Photoresistor_Wiring1.png
+    :align: center
+    :width: 70%
 
 Code
 ---------------

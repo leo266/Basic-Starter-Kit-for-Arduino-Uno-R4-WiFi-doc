@@ -138,36 +138,30 @@ With the `Arduino LED Matrix Editor <https://ledmatrix-editor.arduino.cc/>`_ and
 
 #. Open the LED Matrix Editor
 
-   .. 
-      .. image:: img/LED_Matrix_editor.png
-      :width: 80%
+.. image:: img/LED_Matrix_editor.png
+    :width: 80%
 
 #. Draw your pattern on the center canvas
 
-   .. 
-      .. image:: img/LED_Matrix_editor1.png
-      :width: 80%
+.. image:: img/LED_Matrix_editor1.png
+    :width: 80%
 
 #. Set the frame interval in milliseconds
 
-   .. 
-      .. image:: img/LED_Matrix_editor2.png
-      :width: 80%
+.. image:: img/LED_Matrix_editor2.png
+    :width: 80%
 
 #. You can create a new blank frame or copy and create a new frame from the current frame.
 
-   .. 
-      .. image:: img/LED_Matrix_editor3.png
-      :width: 80%
+.. image:: img/LED_Matrix_editor3.png
+    :width: 80%
 
 #. Export the ``.h`` header file
 
-   .. 
-      .. image:: img/LED_Matrix_editor4.png
-      :width: 80%
+.. image:: img/LED_Matrix_editor4.png
+    :width: 80%
 
-   .. 
-      .. image:: img/LED_Matrix_editor5.png
+.. image:: img/LED_Matrix_editor5.png
 
    After clicking OK, you'll receive a file named ``animation.h``.
 
@@ -181,9 +175,8 @@ In the previous steps, we obtained a ``.h`` file that stores a series of frames 
 
 #. If you are using code from the ``Basic-Starter-Kit-for-Arduino-Uno-R4-WiFi-main\Code`` path, you'll find a tab named ``animation.h`` in the Arduino IDE. Open it and replace the existing code with the .h file you obtained from the website.
 
-   .. 
-      .. image:: img/LED_Matrix_code.png
-      :width: 80%
+.. image:: img/LED_Matrix_code.png
+    :width: 80%
 
 #. If you have created your own sketch, you need to copy the ``.h`` file obtained from the webpage to the same directory of the sketch.
 

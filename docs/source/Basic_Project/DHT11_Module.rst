@@ -29,10 +29,9 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. 
-   .. image:: img/DHT11_Module_Wiring1.png
-   :align: center
-   :width: 40%
+.. image:: img/DHT11_Module_Wiring1.png
+    :align: center
+    :width: 40%
 
 Code
 ---------------

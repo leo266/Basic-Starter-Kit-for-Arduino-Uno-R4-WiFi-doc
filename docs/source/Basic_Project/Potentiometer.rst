@@ -22,10 +22,9 @@ Schematic Diagram
 In this experiment, the potentiometer is used as voltage divider, meaning connecting devices to all of its three pins. Connect the middle pin of the potentiometer to pin A0 and the other two pins to 5V and GND respectively. Therefore, the voltage of the potentiometer is 0-5V. Spin the knob of the potentiometer, and the voltage at pin A0 will change. Then convert that voltage into a digital value (0-1024) with the AD converter in the control board. Through programming, we can use the converted digital value to control the brightness of the LED on the
 control board.
 
-.. 
-   .. image:: img/Potentiometer_Wiring1.png
-   :align: center
-   :width: 70%
+.. image:: img/Potentiometer_Wiring1.png
+    :align: center
+    :width: 70%
 
 Code
 ---------------

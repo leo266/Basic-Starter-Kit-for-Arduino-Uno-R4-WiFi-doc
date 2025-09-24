@@ -15,10 +15,9 @@ Wiring
 
 **Schematic**
 
-.. 
-   .. image:: img/Greedy_Snake_Game_Wiring1.png
-   :width: 80%
-   :align: center
+.. image:: img/Greedy_Snake_Game_Wiring1.png
+    :width: 80%
+    :align: center
 
 
 Code

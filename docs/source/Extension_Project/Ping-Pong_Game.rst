@@ -29,10 +29,9 @@ Wiring
 
 **Schematic**
 
-.. 
-   .. image:: img/Ping_Pong_Game_Wiring1.png
-   :width: 100%
-   :align: center
+.. image:: img/Ping_Pong_Game_Wiring1.png
+    :width: 100%
+    :align: center
 
 Code
 ----------------

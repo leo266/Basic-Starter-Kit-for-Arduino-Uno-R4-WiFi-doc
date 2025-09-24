@@ -17,10 +17,9 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. 
-   .. image:: img/Led_Blink_Wiring1.png
-   :align: center
-   :width: 80%
+.. image:: img/Led_Blink_Wiring1.png
+    :align: center
+    :width: 80%
 
 
 Code

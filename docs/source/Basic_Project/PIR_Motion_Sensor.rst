@@ -22,10 +22,9 @@ Wiring
 Schematic Diagram
 -----------------------
 
-.. 
-   .. image:: img/PIR_Wiring1.png
-   :align: center
-   :width: 50%
+.. image:: img/PIR_Wiring1.png
+    :align: center
+    :width: 50%
 
 
 Code

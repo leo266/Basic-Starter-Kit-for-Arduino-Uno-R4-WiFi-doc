@@ -21,10 +21,9 @@ The 10K resistor is used to reduce high-frequency noise and lower the audio volu
 Schematic Diagram
 -----------------------
 
-.. 
-   .. image:: img/Audio_Speaker_Wiring1.png
-   :align: center
-   :width: 80%
+.. image:: img/Audio_Speaker_Wiring1.png
+    :align: center
+    :width: 80%
 
 
 Code
